@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">AndroidDesignPattern</string>
+    <!--<string name="app_name">AndroidDesignPattern</string>-->
+    <string name="app_name">全国天气预报App</string>
 </resources>
