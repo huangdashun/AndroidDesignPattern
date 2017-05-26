@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".test.IPC.MessengerService"
+            android:process=":remote">
+        </service>
+
+        <activity android:name=".test.IPC.MessengerActivity">
+        </activity>
     </application>
 
 </manifest>
