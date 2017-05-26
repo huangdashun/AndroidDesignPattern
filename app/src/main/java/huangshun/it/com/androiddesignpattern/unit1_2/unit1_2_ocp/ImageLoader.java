@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.unit1_2;
+package huangshun.it.com.androiddesignpattern.unit1_2.unit1_2_ocp;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,39 +15,17 @@ import java.util.concurrent.Executors;
  */
 
 public class ImageLoader {
-    //内存缓存
-    ImageCache mImageCache = new ImageCache();
-    //SD卡缓存
-    DiskCache mDiskCache = new DiskCache();
-    //双缓存
-    DoubleCache mDoubleCache = new DoubleCache();
-    //是否使用SD卡缓存
-    boolean isUseDiskCache = false;
-    //是否使用双缓存
-    boolean isUseDoubleCache = false;
-
+    huangshun.it.com.androiddesignpattern.unit1_2.unit1_2_ocp.ImageCache mImageCache = new MemoryCache();
     //线程池,线程数量为CPU的数量
     ExecutorService mExecutorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-    //设置是否使用SD卡缓存
-    public void setUseDiskCache(boolean useDiskCache) {
-        isUseDiskCache = useDiskCache;
-    }
-
-    public void setUseDoubleCache(boolean isUseDoubleCache) {
-        this.isUseDoubleCache = isUseDoubleCache;
+    public void setImageCache(ImageCache imageCache) {
+        mImageCache = imageCache;
     }
 
     public void displayImage(final String url, final ImageView imageViw) {
-        //判断使用哪种缓存
-        Bitmap bitmap = null;
-        if (isUseDiskCache) {//使用SD卡缓存
-            bitmap = mDiskCache.get(url);
-        } else if (isUseDoubleCache) {//使用双缓存
-            bitmap = mDoubleCache.get(url);
-        } else {
-            bitmap = mImageCache.get(url);
-        }
+        Bitmap bitmap = mImageCache.get(url);
+
         if (bitmap != null) {
             imageViw.setImageBitmap(bitmap);
             return;

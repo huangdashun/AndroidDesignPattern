@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.unit1_2;
+package huangshun.it.com.androiddesignpattern.unit1_2.unit1_2_ocp;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;
@@ -7,11 +7,11 @@ import android.util.LruCache;
  * Created by hs on 2017/5/25.
  */
 
-public class ImageCache {
+public class MemoryCache implements ImageCache {
     //图片缓存
     LruCache<String, Bitmap> mImageCache;
 
-    public ImageCache() {
+    public MemoryCache() {
         initImageCache();
     }
 
@@ -28,10 +28,12 @@ public class ImageCache {
         };
     }
 
+    @Override
     public void put(String url, Bitmap bitmap) {
         mImageCache.put(url, bitmap);
     }
 
+    @Override
     public Bitmap get(String url) {
         return mImageCache.get(url);
     }
