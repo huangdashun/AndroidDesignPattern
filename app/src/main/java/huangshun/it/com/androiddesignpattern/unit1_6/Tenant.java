@@ -2,8 +2,6 @@ package huangshun.it.com.androiddesignpattern.unit1_6;
 
 import android.util.Log;
 
-import java.util.List;
-
 /**
  * Created by hs on 2017/5/27.
  */
@@ -16,16 +14,13 @@ public class Tenant {
     public static final float diffArea = 0.00001f;
 
     public void rentRoom(Mediator mediator) {
-        List<Room> roomList = mediator.getRoomList();
-        for (Room room : roomList) {
-            if (isSuitable(room)) {
-                Log.i(TAG, "租到房子了!" + room);
-            }
+        Room room = mediator.rentOut(roomArea, roomPrice);
+        if (room != null) {
+            Log.i(TAG, "租到房子了:" + room);
+        } else {
+            Log.i(TAG, "没有租到房子");
         }
     }
 
-    private boolean isSuitable(Room room) {
-        return Math.abs(room.price - roomPrice) < diffPrice && Math.abs(room.area - roomArea) < diffArea;
-    }
 
 }
