@@ -18,11 +18,20 @@
         </activity>
 
         <service
-            android:name=".test.IPC.MessengerService"
+            android:name=".test.IPC.messenger.MessengerService"
             android:process=":remote">
         </service>
 
-        <activity android:name=".test.IPC.MessengerActivity">
+        <activity android:name=".test.IPC.messenger.MessengerActivity">
+        </activity>
+
+        <service
+            android:name=".test.IPC.aidl.BookManagerService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".test.IPC.aidl.BookManagerActivity">
         </activity>
     </application>
 
