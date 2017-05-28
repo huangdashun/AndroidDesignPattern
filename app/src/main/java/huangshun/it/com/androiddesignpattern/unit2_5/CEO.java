@@ -7,7 +7,7 @@ package huangshun.it.com.androiddesignpattern.unit2_5;
  */
 
 public class CEO extends Staff {
-    private static CEO mCeo = new CEO();
+    private static final  CEO mCeo = new CEO();
 
     private CEO() {
 
