@@ -1,0 +1,2 @@
+View在平移的过程中,top和left表示的是原始左上角的位置信息,其值并不会发生改变,此时发生改变的是x,y,
+transitionX和transitionY这四个参数.
