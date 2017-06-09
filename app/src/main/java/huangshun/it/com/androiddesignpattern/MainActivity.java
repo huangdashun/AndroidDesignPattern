@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
@@ -21,6 +22,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mMessenger.setOnClickListener(this);
         mAidl = (Button) findViewById(R.id.btn_aidl);
         mAidl.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mMessenger.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                mMessenger.getMeasuredHeight();
+                mMessenger.getMeasuredWidth();
+                mMessenger.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+            }
+        });
     }
 
     @Override
