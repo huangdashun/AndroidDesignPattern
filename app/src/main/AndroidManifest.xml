@@ -33,6 +33,10 @@
 
         <activity android:name=".test.IPC.aidl.BookManagerActivity">
         </activity>
+        <activity android:name=".test.Handler.HandlerDemoActivity">
+        </activity>
+        <activity android:name=".mvp.MVPBaseActivity">
+        </activity>
     </application>
 
 </manifest>
