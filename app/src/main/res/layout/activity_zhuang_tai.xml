@@ -5,23 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="huangshun.it.com.androiddesignpattern.MainActivity">
+    tools:context="huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity">
 
     <Button
-        android:id="@+id/btn_messenger"
+        android:id="@+id/btn_transmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Messenger"/>
+        android:text="转发"/>
 
     <Button
-        android:id="@+id/btn_aidl"
+        android:id="@+id/btn_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aidl"/>
+        android:text="评论"/>
 
     <Button
-        android:id="@+id/btn_zhuangtai"
+        android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="状态模式"/>
+        android:text="注销"/>
 </LinearLayout>

@@ -2,6 +2,7 @@ package huangshun.it.com.androiddesignpattern.mvp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import huangshun.it.com.androiddesignpattern.R;
 
@@ -19,6 +20,7 @@ public abstract class MVPBaseActivity<B, T extends BasePresenter<B>> extends App
         setContentView(R.layout.activity_mvpbase);
         mPresenter = createPresenter();
         mPresenter.attachView((B) this);
+        Log.i("测试", "试一下");
     }
 
     protected abstract T createPresenter();

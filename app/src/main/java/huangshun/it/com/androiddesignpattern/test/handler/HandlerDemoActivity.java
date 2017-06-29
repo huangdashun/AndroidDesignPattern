@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.test.Handler;
+package huangshun.it.com.androiddesignpattern.test.handler;
 
 import android.content.Context;
 import android.os.Bundle;

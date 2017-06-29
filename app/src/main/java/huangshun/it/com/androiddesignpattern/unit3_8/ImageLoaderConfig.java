@@ -40,13 +40,13 @@ public class ImageLoaderConfig {
 
         //设置图片加载中显示的图片
         public Builder setLoadingPlaceholder(int resId) {
-            displayConfig.loadingResId = resId;
+            DisplayConfig.loadingResId = resId;
             return this;
         }
 
         //设置图片加载错误显示的图片
         public Builder setNotFoundPlaceholder(int resId) {
-            displayConfig.failedResId = resId;
+            DisplayConfig.failedResId = resId;
             return this;
         }
 

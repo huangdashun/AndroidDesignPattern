@@ -18,24 +18,28 @@
         </activity>
 
         <service
-            android:name=".test.IPC.messenger.MessengerService"
+            android:name=".test.ipc.messenger.MessengerService"
             android:process=":remote">
         </service>
 
-        <activity android:name=".test.IPC.messenger.MessengerActivity">
+        <activity android:name=".test.ipc.messenger.MessengerActivity">
         </activity>
 
         <service
-            android:name=".test.IPC.aidl.BookManagerService"
+            android:name=".test.ipc.aidl.BookManagerService"
             android:enabled="true"
             android:exported="true">
         </service>
 
-        <activity android:name=".test.IPC.aidl.BookManagerActivity">
+        <activity android:name=".test.ipc.aidl.BookManagerActivity">
         </activity>
-        <activity android:name=".test.Handler.HandlerDemoActivity">
+        <activity android:name=".test.handler.HandlerDemoActivity">
         </activity>
         <activity android:name=".mvp.MVPBaseActivity">
+        </activity>
+        <activity android:name=".unit8_7.ZhuangTaiActivity">
+        </activity>
+        <activity android:name=".unit8_7.LoginActivity">
         </activity>
     </application>
 

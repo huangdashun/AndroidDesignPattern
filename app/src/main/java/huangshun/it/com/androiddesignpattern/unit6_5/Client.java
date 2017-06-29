@@ -17,6 +17,5 @@ public class Client {
         q7Factory.createTire().tire();
         q7Factory.createEngine().engine();
         q7Factory.createBrake().brake();
-
     }
 }

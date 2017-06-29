@@ -7,11 +7,11 @@ import static huangshun.it.com.androiddesignpattern.test.People.Teacher.teacherN
  */
 
 public interface People {
-    static class Teacher {
+    class Teacher {
         static int teacherNumber = 23;
     }
 
-     static class Student {
+     class Student {
         int studentNumber = 32;
 
         static int getTotalNumber() {
