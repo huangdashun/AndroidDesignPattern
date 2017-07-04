@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.test.ipc.aidl;
+package huangshun.it.com.androiddesignpattern.test.IPC.aidl;
 
 import android.content.ComponentName;
 import android.content.Intent;

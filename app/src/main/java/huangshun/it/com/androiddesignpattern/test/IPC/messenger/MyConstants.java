@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.test.ipc.messenger;
+package huangshun.it.com.androiddesignpattern.test.IPC.messenger;
 
 /**
  * Created by hs on 2017/5/26.

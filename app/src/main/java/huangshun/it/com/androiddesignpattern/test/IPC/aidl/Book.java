@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.test.ipc.aidl;
+package huangshun.it.com.androiddesignpattern.test.IPC.aidl;
 
 import android.os.Parcel;
 import android.os.Parcelable;

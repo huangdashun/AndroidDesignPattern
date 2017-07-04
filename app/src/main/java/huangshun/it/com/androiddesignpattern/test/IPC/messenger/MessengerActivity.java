@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.test.ipc.messenger;
+package huangshun.it.com.androiddesignpattern.test.IPC.messenger;
 
 import android.content.ComponentName;
 import android.content.Intent;

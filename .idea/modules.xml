@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidDesignPattern.iml" filepath="$PROJECT_DIR$/AndroidDesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysdk/mysdk.iml" filepath="$PROJECT_DIR$/mysdk/mysdk.iml" />
     </modules>
   </component>
 </project>

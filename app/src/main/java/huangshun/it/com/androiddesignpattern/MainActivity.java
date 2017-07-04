@@ -12,14 +12,16 @@ import android.widget.Button;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import huangshun.it.com.androiddesignpattern.test.ipc.aidl.BookManagerActivity;
-import huangshun.it.com.androiddesignpattern.test.ipc.messenger.MessengerActivity;
+import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
+import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
 import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
+import huangshun.it.com.mysdk.MySDKActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mMessenger;
     private Button mAidl;
     private Button mZhuangtai;
+    private Button mSdkTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAidl.setOnClickListener(this);
         mZhuangtai = (Button) findViewById(R.id.btn_zhuangtai);
         mZhuangtai.setOnClickListener(this);
+        mSdkTest = (Button) findViewById(R.id.btn_sdk_test);
+        mSdkTest.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_zhuangtai:
                 startActivity(new Intent(MainActivity.this, ZhuangTaiActivity.class));
+                break;
+            case R.id.btn_sdk_test:
+                startActivity(new Intent(MainActivity.this, MySDKActivity.class));
                 break;
         }
     }

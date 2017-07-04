@@ -8,7 +8,7 @@ import android.widget.Button;
 import huangshun.it.com.androiddesignpattern.R;
 
 public class ZhuangTaiActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button mTransimit;//转发
+    private Button mTransmit;//转发
     private Button mComment;//评论
     private Button mLogout;//注销
 
@@ -22,13 +22,13 @@ public class ZhuangTaiActivity extends AppCompatActivity implements View.OnClick
 
 
     private void initView() {
-        mTransimit = (Button) findViewById(R.id.btn_transmit);
+        mTransmit = (Button) findViewById(R.id.btn_transmit);
         mLogout = (Button) findViewById(R.id.btn_logout);
         mComment = (Button) findViewById(R.id.btn_comment);
     }
 
     private void initListener() {
-        mTransimit.setOnClickListener(this);
+        mTransmit.setOnClickListener(this);
         mLogout.setOnClickListener(this);
         mComment.setOnClickListener(this);
     }
