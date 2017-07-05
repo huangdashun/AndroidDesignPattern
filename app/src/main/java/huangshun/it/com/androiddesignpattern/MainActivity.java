@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 
+import java.util.Calendar;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
@@ -18,6 +21,7 @@ import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
 import huangshun.it.com.mysdk.MySDKActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = "MainActivity";
     private Button mMessenger;
     private Button mAidl;
     private Button mZhuangtai;
@@ -35,6 +39,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mZhuangtai.setOnClickListener(this);
         mSdkTest = (Button) findViewById(R.id.btn_sdk_test);
         mSdkTest.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CalendarTest();
+    }
+
+    private void CalendarTest() {
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.setTimeInMillis(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
+        calendar.set(Calendar.HOUR_OF_DAY, 10);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        long start = calendar.getTimeInMillis() / 1000;
+
+        Log.d(TAG, "prepareBongBlock start " + calendar.getTime());
+
+        calendar.add(Calendar.DAY_OF_MONTH, 3);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        long end = calendar.getTimeInMillis() / 1000;
+
+        Log.d(TAG, "prepareBongBlock end " + calendar.getTime());
+
     }
 
     @Override
