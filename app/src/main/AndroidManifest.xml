@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="huangshun.it.com.androiddesignpattern">
+    package="huangshun.it.com.androiddesignpattern">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,36 +12,30 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <service
             android:name=".test.IPC.messenger.MessengerService"
-            android:process=":remote">
-        </service>
+            android:process=":remote" />
 
-        <activity android:name=".test.IPC.messenger.MessengerActivity">
-        </activity>
+        <activity android:name=".test.IPC.messenger.MessengerActivity" />
 
         <service
             android:name=".test.IPC.aidl.BookManagerService"
             android:enabled="true"
-            android:exported="true">
-        </service>
+            android:exported="true" />
 
-        <activity android:name=".test.IPC.aidl.BookManagerActivity">
-        </activity>
-        <activity android:name=".test.handler.HandlerDemoActivity">
-        </activity>
-        <activity android:name=".mvp.MVPBaseActivity">
-        </activity>
-        <activity android:name=".unit8_7.ZhuangTaiActivity">
-        </activity>
-        <activity android:name=".unit8_7.LoginActivity">
-        </activity>
+        <activity android:name=".test.IPC.aidl.BookManagerActivity" />
+        <activity android:name=".test.handler.HandlerDemoActivity" />
+        <activity android:name=".mvp.MVPBaseActivity" />
+        <activity android:name=".unit8_7.ZhuangTaiActivity" />
+        <activity android:name=".unit8_7.LoginActivity" />
+        <activity android:name=".dagger2.demo.Dagger2Activity" />
+        <activity android:name=".dagger2.demo.DaggerDifInsActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+// 添加其他插件
+apply plugin: 'com.neenbedankt.android-apt'//添加 apt 命令
 
 android {
     compileSdkVersion 25
@@ -24,8 +26,13 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile project(':mysdk')
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.dagger:dagger:2.9'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
     testCompile 'junit:junit:4.12'
-    compile project(':mysdk')
+    apt 'com.google.dagger:dagger-compiler:2.9'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }
