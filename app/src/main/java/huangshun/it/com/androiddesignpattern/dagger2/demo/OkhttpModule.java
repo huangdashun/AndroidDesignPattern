@@ -1,5 +1,7 @@
 package huangshun.it.com.androiddesignpattern.dagger2.demo;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
@@ -11,6 +13,7 @@ import okhttp3.OkHttpClient;
 @Module
 public class OkhttpModule {
 
+    @Singleton
     @Provides
     public OkHttpClient providerOkHttpClient() {
         return new OkHttpClient();

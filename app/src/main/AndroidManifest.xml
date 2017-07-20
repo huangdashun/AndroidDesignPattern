@@ -3,7 +3,7 @@
     package="huangshun.it.com.androiddesignpattern">
 
     <application
-        android:name=".MyApplication"
+        android:name=".DaggerApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -36,7 +36,8 @@
         <activity android:name=".unit8_7.LoginActivity" />
         <activity android:name=".dagger2.demo.Dagger2Activity" />
         <activity android:name=".dagger2.demo.DaggerDifInsActivity" />
-        <activity android:name=".unit13_7.MemotoActivity"></activity>
+        <activity android:name=".unit13_7.MemotoActivity" />
+        <activity android:name=".dagger2.demo2.DaggerComponentActivity"></activity>
     </application>
 
 </manifest>

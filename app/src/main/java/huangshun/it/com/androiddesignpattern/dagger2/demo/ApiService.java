@@ -27,7 +27,7 @@ public class ApiService {
     //服务器保存数据
     public void register() {
 //        Log.i(TAG, "register")
-        Log.d(TAG, "register() called with " + ""+this);
+        Log.d(TAG, "register() called with " + mOkHttpClient);
 //        Request request = new Request.Builder().url("www.baidu.com").build();
 //        mOkHttpClient.newCall(request).enqueue(new Callback() {
 //            @Override

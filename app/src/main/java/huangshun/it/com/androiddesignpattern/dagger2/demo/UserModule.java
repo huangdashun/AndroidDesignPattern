@@ -1,15 +1,11 @@
 package huangshun.it.com.androiddesignpattern.dagger2.demo;
 
 import android.content.Context;
-import android.util.Log;
 
 import javax.inject.Inject;
 
 import dagger.Module;
 import dagger.Provides;
-import huangshun.it.com.androiddesignpattern.dagger2.annotation.Release;
-import huangshun.it.com.androiddesignpattern.dagger2.annotation.Text;
-import okhttp3.OkHttpClient;
 
 /**
  * Created by hs on 2017/7/19.
@@ -33,29 +29,20 @@ public class UserModule {
         mContext = context;
     }
 
+
+//    @Release
 //    @Provides
-//    public String getUrl1() {
-//        return "00000000";
+//    public ApiService provideApiServiceRelease(OkHttpClient okHttpClient) {
+//        Log.i(TAG, "provideApiServiceRelease----release");
+//        return new ApiService(okHttpClient);
 //    }
-
+//
+//    @Text
 //    @Provides
-//    public Context getContext() {
-//        return mContext;
+//    public ApiService provideApiServiceDev(OkHttpClient okHttpClient) {
+//        Log.i(TAG, "provideApiServiceDev----dev");
+//        return new ApiService(okHttpClient);
 //    }
-
-    @Release
-    @Provides
-    public ApiService provideApiServiceRelease(OkHttpClient okHttpClient) {
-        Log.i(TAG, "provideApiServiceRelease----release");
-        return new ApiService(okHttpClient);
-    }
-
-    @Text
-    @Provides
-    public ApiService provideApiServiceDev(OkHttpClient okHttpClient) {
-        Log.i(TAG, "provideApiServiceDev----dev");
-        return new ApiService(okHttpClient);
-    }
 
     @Provides
     public UserStore provideUserStore() {
@@ -63,8 +50,8 @@ public class UserModule {
     }
 
     @Provides
-    public UserManger provideUserManger(ApiService apiService, UserStore userStore) {
-        return new UserManger(apiService, userStore);
+    public UserManger provideUserManger(ApiService apiService) {
+        return new UserManger(apiService);
     }
 
 }

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
@@ -16,6 +15,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
+import huangshun.it.com.androiddesignpattern.dagger2.demo2.DaggerComponentActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
 import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mSdkTest;
     private Button mDagger;
     private Button mMemoto;
+    Button mDaggerComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDagger.setOnClickListener(this);
         mMemoto = (Button) findViewById(R.id.btn_memoto);
         mMemoto.setOnClickListener(this);
+        mDaggerComponent = (Button) findViewById(R.id.btn_dagger_component);
+        mDaggerComponent.setOnClickListener(this);
 
     }
 
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calendar.set(Calendar.SECOND, 0);
         long start = calendar.getTimeInMillis() / 1000;
 
-        Log.d(TAG, "prepareBongBlock start " + calendar.getTime());
+//        Log.d(TAG, "prepareBongBlock start " + calendar.getTime());
 
         calendar.add(Calendar.DAY_OF_MONTH, 3);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -73,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calendar.set(Calendar.MINUTE, 0);
         long end = calendar.getTimeInMillis() / 1000;
 
-        Log.d(TAG, "prepareBongBlock end " + calendar.getTime());
+//        Log.d(TAG, "prepareBongBlock end " + calendar.getTime());
 
     }
 
@@ -111,8 +114,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_memoto:
                 startActivity(new Intent(MainActivity.this, MemotoActivity.class));
                 break;
+            case R.id.btn_dagger_component:
+                startActivity(new Intent(MainActivity.this, DaggerComponentActivity.class));
+                break;
         }
     }
+
 
     class HandlerCallback implements Handler.Callback {
 

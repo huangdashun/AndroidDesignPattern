@@ -8,9 +8,8 @@ public class UserManger {
     private ApiService mApiService;
     private UserStore mUserStore;
 
-    public UserManger(ApiService apiService, UserStore userStore) {
+    public UserManger(ApiService apiService) {
         mApiService = apiService;
-        mUserStore = userStore;
 
     }
 
