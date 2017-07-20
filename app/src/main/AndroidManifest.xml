@@ -35,7 +35,8 @@
         <activity android:name=".unit8_7.ZhuangTaiActivity" />
         <activity android:name=".unit8_7.LoginActivity" />
         <activity android:name=".dagger2.demo.Dagger2Activity" />
-        <activity android:name=".dagger2.demo.DaggerDifInsActivity"></activity>
+        <activity android:name=".dagger2.demo.DaggerDifInsActivity" />
+        <activity android:name=".unit13_7.MemotoActivity"></activity>
     </application>
 
 </manifest>

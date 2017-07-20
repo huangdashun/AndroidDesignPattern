@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
+import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
 import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
 import huangshun.it.com.mysdk.MySDKActivity;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mZhuangtai;
     private Button mSdkTest;
     private Button mDagger;
+    private Button mMemoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSdkTest.setOnClickListener(this);
         mDagger = (Button) findViewById(R.id.btn_dagger2);
         mDagger.setOnClickListener(this);
+        mMemoto = (Button) findViewById(R.id.btn_memoto);
+        mMemoto.setOnClickListener(this);
+
     }
 
     @Override
@@ -102,6 +107,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_dagger2:
                 startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
+                break;
+            case R.id.btn_memoto:
+                startActivity(new Intent(MainActivity.this, MemotoActivity.class));
                 break;
         }
     }

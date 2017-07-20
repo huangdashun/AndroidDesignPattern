@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 // 添加其他插件
 apply plugin: 'com.neenbedankt.android-apt'//添加 apt 命令
-
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -35,4 +35,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     apt 'com.google.dagger:dagger-compiler:2.9'
     provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }
