@@ -7,6 +7,9 @@ package huangshun.it.com.androiddesignpattern.unit14_1;
  */
 
 public interface Iterator<T> {
+
+    public static final int test1 = 1;
+
     boolean hasNext();
 
     T next();
