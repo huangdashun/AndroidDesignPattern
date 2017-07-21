@@ -37,7 +37,8 @@
         <activity android:name=".dagger2.demo.Dagger2Activity" />
         <activity android:name=".dagger2.demo.DaggerDifInsActivity" />
         <activity android:name=".unit13_7.MemotoActivity" />
-        <activity android:name=".dagger2.demo2.DaggerComponentActivity"></activity>
+        <activity android:name=".dagger2.demo2.DaggerComponentActivity" />
+        <activity android:name=".rxjava.demo2.RxJavaActivity"></activity>
     </application>
 
 </manifest>

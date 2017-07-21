@@ -14,8 +14,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
 import huangshun.it.com.androiddesignpattern.dagger2.demo2.DaggerComponentActivity;
+import huangshun.it.com.androiddesignpattern.rxjava.demo2.RxJavaActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
 import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
@@ -24,32 +28,37 @@ import huangshun.it.com.mysdk.MySDKActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
-    private Button mMessenger;
-    private Button mAidl;
-    private Button mZhuangtai;
-    private Button mSdkTest;
-    private Button mDagger;
-    private Button mMemoto;
+    @BindView(R.id.btn_messenger)
+    Button mMessenger;
+    @BindView(R.id.btn_aidl)
+    Button mAidl;
+    @BindView(R.id.btn_zhuangtai)
+    Button mZhuangtai;
+    @BindView(R.id.btn_sdk_test)
+    Button mSdkTest;
+    @BindView(R.id.btn_dagger2)
+    Button mDagger;
+    @BindView(R.id.btn_memoto)
+    Button mMemoto;
+    @BindView(R.id.btn_dagger_component)
     Button mDaggerComponent;
+    @BindView(R.id.btn_rx)
+    Button mBtnRx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mMessenger = (Button) findViewById(R.id.btn_messenger);
+        ButterKnife.bind(this);
+
         mMessenger.setOnClickListener(this);
-        mAidl = (Button) findViewById(R.id.btn_aidl);
         mAidl.setOnClickListener(this);
-        mZhuangtai = (Button) findViewById(R.id.btn_zhuangtai);
         mZhuangtai.setOnClickListener(this);
-        mSdkTest = (Button) findViewById(R.id.btn_sdk_test);
         mSdkTest.setOnClickListener(this);
-        mDagger = (Button) findViewById(R.id.btn_dagger2);
         mDagger.setOnClickListener(this);
-        mMemoto = (Button) findViewById(R.id.btn_memoto);
         mMemoto.setOnClickListener(this);
-        mDaggerComponent = (Button) findViewById(R.id.btn_dagger_component);
         mDaggerComponent.setOnClickListener(this);
+        mBtnRx.setOnClickListener(this);
 
     }
 
@@ -93,7 +102,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    @Override
+    @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
+            , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_messenger://信使
@@ -117,9 +127,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_dagger_component:
                 startActivity(new Intent(MainActivity.this, DaggerComponentActivity.class));
                 break;
+            case R.id.btn_rx:
+                startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
+                break;
         }
     }
-
 
     class HandlerCallback implements Handler.Callback {
 
