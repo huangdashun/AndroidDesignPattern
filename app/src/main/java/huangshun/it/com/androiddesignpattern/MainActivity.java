@@ -20,6 +20,8 @@ import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
 import huangshun.it.com.androiddesignpattern.dagger2.demo2.DaggerComponentActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo2.RxJavaActivity;
+import huangshun.it.com.androiddesignpattern.rxjava.demo3.RxSearchActivity;
+import huangshun.it.com.androiddesignpattern.rxjava.demo4.RxPicActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
 import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
@@ -44,6 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mDaggerComponent;
     @BindView(R.id.btn_rx)
     Button mBtnRx;
+    @BindView(R.id.btn_rx_search)
+    Button mBtnRxSearch;
+    @BindView(R.id.btn_rx_pic)
+    Button mBtnRxPic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mMemoto.setOnClickListener(this);
         mDaggerComponent.setOnClickListener(this);
         mBtnRx.setOnClickListener(this);
-
+        mBtnRxSearch.setOnClickListener(this);
+        mBtnRxPic.setOnClickListener(this);
     }
 
     @Override
@@ -129,6 +136,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_rx:
                 startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
+                break;
+            case R.id.btn_rx_search:
+                startActivity(new Intent(MainActivity.this, RxSearchActivity.class));
+                break;
+            case R.id.btn_rx_pic:
+                startActivity(new Intent(MainActivity.this, RxPicActivity.class));
                 break;
         }
     }

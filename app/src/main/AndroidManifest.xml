@@ -38,7 +38,9 @@
         <activity android:name=".dagger2.demo.DaggerDifInsActivity" />
         <activity android:name=".unit13_7.MemotoActivity" />
         <activity android:name=".dagger2.demo2.DaggerComponentActivity" />
-        <activity android:name=".rxjava.demo2.RxJavaActivity"></activity>
+        <activity android:name=".rxjava.demo2.RxJavaActivity" />
+        <activity android:name=".rxjava.demo3.RxSearchActivity"></activity>
+        <activity android:name=".rxjava.demo4.RxPicActivity"></activity>
     </application>
 
 </manifest>
