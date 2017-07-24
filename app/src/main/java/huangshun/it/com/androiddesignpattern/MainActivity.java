@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
 import huangshun.it.com.androiddesignpattern.dagger2.demo2.DaggerComponentActivity;
+import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo2.RxJavaActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo3.RxSearchActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo4.RxPicActivity;
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnRxSearch;
     @BindView(R.id.btn_rx_pic)
     Button mBtnRxPic;
+    @BindView(R.id.btn_okhttp)
+    Button mBtnOkHttp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,16 +60,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mMessenger.setOnClickListener(this);
-        mAidl.setOnClickListener(this);
-        mZhuangtai.setOnClickListener(this);
-        mSdkTest.setOnClickListener(this);
-        mDagger.setOnClickListener(this);
-        mMemoto.setOnClickListener(this);
-        mDaggerComponent.setOnClickListener(this);
-        mBtnRx.setOnClickListener(this);
-        mBtnRxSearch.setOnClickListener(this);
-        mBtnRxPic.setOnClickListener(this);
+//        mMessenger.setOnClickListener(this);
+//        mAidl.setOnClickListener(this);
+//        mZhuangtai.setOnClickListener(this);
+//        mSdkTest.setOnClickListener(this);
+//        mDagger.setOnClickListener(this);
+//        mMemoto.setOnClickListener(this);
+//        mDaggerComponent.setOnClickListener(this);
+//        mBtnRx.setOnClickListener(this);
+//        mBtnRxSearch.setOnClickListener(this);
+//        mBtnRxPic.setOnClickListener(this);
+//        mBtnOkHttp.setOnClickListener(this);
     }
 
     @Override
@@ -110,7 +114,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
-            , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component})
+            , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
+            , R.id.btn_okhttp})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_messenger://信使
@@ -142,6 +147,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_rx_pic:
                 startActivity(new Intent(MainActivity.this, RxPicActivity.class));
+                break;
+            case R.id.btn_okhttp:
+                startActivity(new Intent(MainActivity.this, OkHttpActivity.class));
                 break;
         }
     }

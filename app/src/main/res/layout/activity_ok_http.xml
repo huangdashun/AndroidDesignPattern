@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getRequest"
+        android:text="点击1" />
+
+    <Button
+        android:id="@+id/btn_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get" />
+
+    <Button
+        android:id="@+id/btn_post_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="post-表单" />
+
+    <Button
+        android:id="@+id/btn_post_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="post-json" />
+
+
+    <Button
+        android:id="@+id/btn_down_simple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文件下载_基础方式" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_simple"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+</LinearLayout>
