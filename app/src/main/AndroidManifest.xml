@@ -47,7 +47,8 @@
         <activity android:name=".rxjava.demo3.RxSearchActivity" />
         <activity android:name=".rxjava.demo4.RxPicActivity" />
         <activity android:name=".okhttp3.OkHttpActivity" />
-        <activity android:name=".retrofit.RetrofitActivity"></activity>
+        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".test.phonetype.PhoneTypeActivity"></activity>
     </application>
 
 </manifest>

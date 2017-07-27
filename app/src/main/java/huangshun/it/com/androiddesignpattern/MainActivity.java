@@ -26,6 +26,7 @@ import huangshun.it.com.androiddesignpattern.rxjava.demo3.RxSearchActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo4.RxPicActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
+import huangshun.it.com.androiddesignpattern.test.phonetype.PhoneTypeActivity;
 import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
 import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
 import huangshun.it.com.mysdk.MySDKActivity;
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnOkHttp;
     @BindView(R.id.btn_retrofit)
     Button mBtnRetrofit;
+    @BindView(R.id.btn_phone_type)
+    Button mBtnPhoneType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
-            , R.id.btn_okhttp, R.id.btn_retrofit})
+            , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_messenger://信使
@@ -156,6 +159,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_retrofit:
                 startActivity(new Intent(MainActivity.this, RetrofitActivity.class));
+                break;
+            case R.id.btn_phone_type://手机类型
+                startActivity(new Intent(MainActivity.this, PhoneTypeActivity.class));
                 break;
         }
     }

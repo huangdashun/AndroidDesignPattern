@@ -81,5 +81,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="retrofit" />
+
+        <Button
+            android:id="@+id/btn_phone_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机类型判断" />
     </LinearLayout>
 </ScrollView>
