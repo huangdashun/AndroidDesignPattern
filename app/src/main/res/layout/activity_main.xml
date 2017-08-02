@@ -87,10 +87,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="手机类型判断" />
+
         <Button
             android:id="@+id/btn_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="手机市场助手" />
+
+        <Button
+            android:id="@+id/btn_ble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="蓝牙" />
     </LinearLayout>
 </ScrollView>
