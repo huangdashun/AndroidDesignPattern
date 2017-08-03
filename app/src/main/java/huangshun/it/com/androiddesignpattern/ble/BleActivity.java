@@ -126,4 +126,16 @@ public class BleActivity extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(mStatusReceive);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mStatusReceive);
+    }
 }

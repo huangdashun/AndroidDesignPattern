@@ -3,6 +3,8 @@ package huangshun.it.com.androiddesignpattern.play.activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import huangshun.it.com.androiddesignpattern.R;
+import huangshun.it.com.androiddesignpattern.play.adapter.ViewPagerAdapter;
 
 public class PlayMainActivity extends AppCompatActivity {
 
@@ -24,6 +27,10 @@ public class PlayMainActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     @BindView(R.id.tool_bar)
     Toolbar mToolBar;
+    @BindView(R.id.tab_layout)
+    TabLayout mTabLayout;
+    @BindView(R.id.viewpager)
+    ViewPager mViewpager;
     private View mHeaderView;
 
     @Override
@@ -31,10 +38,21 @@ public class PlayMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_main);
         ButterKnife.bind(this);
-        initListener();
+        initDrawerLayout();
+
+        initTabLayout();
     }
 
-    private void initListener() {
+    private void initTabLayout() {
+        ViewPagerAdapter viewpagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        mViewpager.setAdapter(viewpagerAdapter);
+
+        mTabLayout.setupWithViewPager(mViewpager);
+
+    }
+
+    private void initDrawerLayout() {
 //        mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
 //            @Override
 //            public void onDrawerSlide(View drawerView, float slideOffset) {
