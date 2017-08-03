@@ -11,6 +11,12 @@
         tools:context="huangshun.it.com.androiddesignpattern.MainActivity">
 
         <Button
+            android:id="@+id/btn_google_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="谷歌地图" />
+
+        <Button
             android:id="@+id/btn_messenger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,5 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="蓝牙" />
+
+
     </LinearLayout>
 </ScrollView>

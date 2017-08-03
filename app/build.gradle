@@ -5,6 +5,14 @@ apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    signingConfigs {
+//        debug {
+//            storeFile file("keystore.jks")
+//            storePassword "4662655"
+//            keyAlias "keystorelove"
+//            keyPassword "4662655"
+//        }
+    }
     defaultConfig {
         applicationId "huangshun.it.com.androiddesignpattern"
         minSdkVersion 15
@@ -14,6 +22,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -51,8 +60,14 @@ dependencies {
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.android.support:design:25.3.1'
+
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.5.1'
     apt 'com.google.dagger:dagger-compiler:2.9'
     provided 'org.glassfish:javax.annotation:10.0-b28'
+//    谷歌服务
+    compile 'com.google.android.gms:play-services-maps:10.2.0'
+    //高德服务
+    compile 'com.amap.api:3dmap:latest.integration'
+    compile 'com.amap.api:location:latest.integration'
 }

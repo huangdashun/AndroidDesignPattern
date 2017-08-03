@@ -3,4 +3,5 @@
     <string name="menu_search">搜索</string>
     <string name="open">打开</string>
     <string name="close">关闭</string>
+    <string name="title_activity_google_map">Map</string>
 </resources>

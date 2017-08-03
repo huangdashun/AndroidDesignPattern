@@ -20,6 +20,7 @@ import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.ble.BleActivity;
 import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
 import huangshun.it.com.androiddesignpattern.dagger2.demo2.DaggerComponentActivity;
+import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
 import huangshun.it.com.androiddesignpattern.play.activity.PlayMainActivity;
 import huangshun.it.com.androiddesignpattern.retrofit.RetrofitActivity;
@@ -34,7 +35,7 @@ import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
 import huangshun.it.com.mysdk.MySDKActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "MainMapActivity";
     @BindView(R.id.btn_messenger)
     Button mMessenger;
     @BindView(R.id.btn_aidl)
@@ -65,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnPlay;
     @BindView(R.id.btn_ble)
     Button mBtnBle;
+    @BindView(R.id.btn_google_map)
+    Button mBtnGoogleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
-            , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble})
+            , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_messenger://信使
@@ -174,6 +177,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_ble://蓝牙
                 startActivity(new Intent(MainActivity.this, BleActivity.class));
+                break;
+            case R.id.btn_google_map://谷歌地图
+                startActivity(new Intent(MainActivity.this, MainMapActivity.class));
                 break;
         }
     }
