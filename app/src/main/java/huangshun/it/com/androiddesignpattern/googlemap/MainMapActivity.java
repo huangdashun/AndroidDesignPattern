@@ -62,16 +62,20 @@ public class MainMapActivity extends FragmentActivity implements View.OnClickLis
     private Button mapbtn;
     private LinearLayout mContainerLayout;
     private LayoutParams mParams;
+    //高德
     private TextureMapView mAmapView;
+    private AMapLocationClient mlocationClient;
+    private AMapLocationClientOption mLocationOption;
+    //谷歌
     private MapView mGoogleMapView;
+
     private float zoom = 10;
     private double latitude = 39.23242;
     private double longitude = 116.253654;
     private boolean mIsAmapDisplay = true;
     private boolean mIsAuto = true;
     private GoogleMap googlemap;
-    private AMapLocationClient mlocationClient;
-    private AMapLocationClientOption mLocationOption;
+
     private AlphaAnimation anappear;
     private AlphaAnimation andisappear;
     private IntentFilter mIntentFilter;
@@ -82,17 +86,17 @@ public class MainMapActivity extends FragmentActivity implements View.OnClickLis
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_map);
-        init();
-        initLocation();
+        init();//初始化view
+        initLocation();//初始化位置
         Log.i(TAG, sHA1(getApplicationContext()) + "");
-        mContainerLayout = (LinearLayout) findViewById(R.id.map_container);
+        mContainerLayout = (LinearLayout) findViewById(R.id.map_container);//放地图的view
 
         mAmapView = new TextureMapView(this);
         mParams = new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT);
         mContainerLayout.addView(mAmapView, mParams);
 
-        mAmapView.onCreate(savedInstanceState);
+        mAmapView.onCreate(savedInstanceState);//此方法必须重写
 
         mAmapView.getMap().setOnCameraChangeListener(this);
 
@@ -110,7 +114,14 @@ public class MainMapActivity extends FragmentActivity implements View.OnClickLis
         registerReceiver(mInstallReciver, mIntentFilter);
     }
 
-
+    private void init() {
+        mContainerLayout = (LinearLayout) findViewById(R.id.map_container);
+        mapbtn = (Button) findViewById(R.id.button);
+        mcheckbtn = (ToggleButton) findViewById(R.id.auto);
+        mapbtn.setOnClickListener(this);
+        mcheckbtn.setOnClickListener(this);
+        mcheckbtn.setOnCheckedChangeListener(this);
+    }
 
     private void initLocation() {
         //初始化client
@@ -127,15 +138,56 @@ public class MainMapActivity extends FragmentActivity implements View.OnClickLis
         mlocationClient.startLocation();
     }
 
-    private void init() {
-        mContainerLayout = (LinearLayout) findViewById(R.id.map_container);
-        mapbtn = (Button) findViewById(R.id.button);
-        mcheckbtn = (ToggleButton) findViewById(R.id.auto);
-        mapbtn.setOnClickListener(this);
-        mcheckbtn.setOnClickListener(this);
-        mcheckbtn.setOnCheckedChangeListener(this);
+    /**
+     * 设置高德地图的定位监听回调
+     *
+     * @param aMapLocation
+     */
+    @Override
+    public void onLocationChanged(AMapLocation aMapLocation) {
+        if (aMapLocation != null
+                && aMapLocation.getErrorCode() == 0) {
+            longitude = aMapLocation.getLongitude();
+            latitude = aMapLocation.getLatitude();
+            if (!aMapLocation.getCountry().equals("中国")) {
+                changeToGoogleMapView();
+            } else {//高德地图移动视口
+                mAmapView.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 15));
+            }
+            Toast.makeText(MainMapActivity.this, aMapLocation.getCountry(), Toast.LENGTH_LONG).show();
+            mIsAuto = false;
+            mcheckbtn.setChecked(false);
+        } else {
+            String errText = "定位失败," + aMapLocation.getErrorCode() + ": " + aMapLocation.getErrorInfo();
+            Log.e("AmapErr", errText);
+            Toast.makeText(MainMapActivity.this, errText, Toast.LENGTH_LONG).show();
+        }
     }
 
+    /**
+     * 高德地图移动监听
+     *
+     * @param cameraPosition
+     */
+    @Override
+    public void onCameraChange(com.amap.api.maps.model.CameraPosition cameraPosition) {
+
+    }
+
+    /**
+     * 高德地图移动完成回调
+     *
+     * @param cameraPosition 地图移动结束的中心点位置信息
+     */
+    @Override
+    public void onCameraChangeFinish(com.amap.api.maps.model.CameraPosition cameraPosition) {
+        longitude = cameraPosition.target.longitude;
+        latitude = cameraPosition.target.latitude;
+        zoom = cameraPosition.zoom;
+        if (!isInArea(latitude, longitude) && mIsAmapDisplay && mIsAuto) {
+            changeToGoogleMapView();
+        }
+    }
 
     @Override
     public void onClick(View v) {
@@ -221,29 +273,10 @@ public class MainMapActivity extends FragmentActivity implements View.OnClickLis
         mGoogleMapView.onCreate(null);
         mGoogleMapView.onResume();
         mContainerLayout.addView(mGoogleMapView, mParams);
-        mGoogleMapView.getMapAsync(this);
+        mGoogleMapView.getMapAsync(this);//必须执行在主线程
         handler.sendEmptyMessageDelayed(0, 500);
     }
 
-    @Override
-    public void onCameraChange(com.amap.api.maps.model.CameraPosition cameraPosition) {
-
-    }
-
-    /**
-     * 高德地图移动完成回调
-     *
-     * @param cameraPosition 地图移动结束的中心点位置信息
-     */
-    @Override
-    public void onCameraChangeFinish(com.amap.api.maps.model.CameraPosition cameraPosition) {
-        longitude = cameraPosition.target.longitude;
-        latitude = cameraPosition.target.latitude;
-        zoom = cameraPosition.zoom;
-        if (!isInArea(latitude, longitude) && mIsAmapDisplay && mIsAuto) {
-            changeToGoogleMapView();
-        }
-    }
 
     /**
      * 粗略判断当前屏幕显示的地图中心点是否在国内
@@ -340,26 +373,6 @@ public class MainMapActivity extends FragmentActivity implements View.OnClickLis
         }
     }
 
-    @Override
-    public void onLocationChanged(AMapLocation aMapLocation) {
-        if (aMapLocation != null
-                && aMapLocation.getErrorCode() == 0) {
-            longitude = aMapLocation.getLongitude();
-            latitude = aMapLocation.getLatitude();
-            if (!aMapLocation.getCountry().equals("中国")) {
-                changeToGoogleMapView();
-            } else {
-                mAmapView.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 15));
-            }
-            Toast.makeText(MainMapActivity.this, aMapLocation.getCountry(), Toast.LENGTH_LONG).show();
-            mIsAuto = false;
-            mcheckbtn.setChecked(false);
-        } else {
-            String errText = "定位失败," + aMapLocation.getErrorCode() + ": " + aMapLocation.getErrorInfo();
-            Log.e("AmapErr", errText);
-            Toast.makeText(MainMapActivity.this, errText, Toast.LENGTH_LONG).show();
-        }
-    }
 
     /**
      * 停止定位

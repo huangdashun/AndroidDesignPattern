@@ -6,38 +6,38 @@
     android:orientation="vertical">
 
 
-    <!--<android.support.v7.widget.RecyclerView-->
-    <!--android:id="@+id/recycle_view"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent">-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--</android.support.v7.widget.RecyclerView>-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="推荐" />
+    </android.support.v7.widget.RecyclerView>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="推荐" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="{ion-ios-heart-outline} 哈哈哈"
-        android:textSize="40dp" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="{ion-ios-heart-outline} 哈哈哈"-->
+        <!--android:textSize="40dp" />-->
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:ico_icon="ion-ios-heart-outline"
-        app:ico_size="48dp" />
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:ico_icon="ion-ios-heart-outline"-->
+        <!--app:ico_size="48dp" />-->
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:ico_icon="hsa-yunshu"
-        app:ico_size="48dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="{hsa-wuliu} 呵呵呵"
-        android:textSize="40dp" />
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:ico_icon="hsa-yunshu"-->
+        <!--app:ico_size="48dp" />-->
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="{hsa-wuliu} 呵呵呵"-->
+        <!--android:textSize="40dp" />-->
 </LinearLayout>

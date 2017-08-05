@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.play.adapter;
+package huangshun.it.com.androiddesignpattern.play.ui.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import huangshun.it.com.androiddesignpattern.play.bean.FragmentInfo;
-import huangshun.it.com.androiddesignpattern.play.fragment.CategoryFragment;
-import huangshun.it.com.androiddesignpattern.play.fragment.GamesFragment;
-import huangshun.it.com.androiddesignpattern.play.fragment.RankingFragment;
-import huangshun.it.com.androiddesignpattern.play.fragment.RecommendFragment;
+import huangshun.it.com.androiddesignpattern.play.ui.fragment.CategoryFragment;
+import huangshun.it.com.androiddesignpattern.play.ui.fragment.GamesFragment;
+import huangshun.it.com.androiddesignpattern.play.ui.fragment.RankingFragment;
+import huangshun.it.com.androiddesignpattern.play.ui.fragment.RecommendFragment;
 
 /**
  * Created by hs on 2017/8/2.

@@ -22,7 +22,7 @@ import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
 import huangshun.it.com.androiddesignpattern.dagger2.demo2.DaggerComponentActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
-import huangshun.it.com.androiddesignpattern.play.activity.PlayMainActivity;
+import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayMainActivity;
 import huangshun.it.com.androiddesignpattern.retrofit.RetrofitActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo2.RxJavaActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo3.RxSearchActivity;

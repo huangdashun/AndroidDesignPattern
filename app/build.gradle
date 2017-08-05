@@ -80,4 +80,6 @@ dependencies {
 //    字体图标
     compile 'com.mikepenz:iconics-core:2.8.2@aar'
     compile 'com.mikepenz:ionicons-typeface:2.0.1.2@aar'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }

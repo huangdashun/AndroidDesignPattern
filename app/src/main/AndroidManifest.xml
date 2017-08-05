@@ -73,7 +73,7 @@
         <activity android:name=".okhttp3.OkHttpActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".test.phonetype.PhoneTypeActivity" />
-        <activity android:name=".play.activity.PlayMainActivity" />
+        <activity android:name=".play.ui.activity.PlayMainActivity" />
         <activity android:name=".ble.BleActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.play.fragment;
+package huangshun.it.com.androiddesignpattern.play.ui.fragment;
 
 import android.support.v4.app.Fragment;
 

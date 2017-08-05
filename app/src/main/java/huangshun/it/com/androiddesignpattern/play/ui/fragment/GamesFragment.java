@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.play.fragment;
+package huangshun.it.com.androiddesignpattern.play.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,16 +13,11 @@ import huangshun.it.com.androiddesignpattern.R;
  * Created by hs on 2017/8/2.
  */
 
-public class RecommendFragment extends Fragment {
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
+public class GamesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_recomend, container, false);
+        View view = inflater.inflate(R.layout.fragment_games, container, false);
         return view;
     }
 }

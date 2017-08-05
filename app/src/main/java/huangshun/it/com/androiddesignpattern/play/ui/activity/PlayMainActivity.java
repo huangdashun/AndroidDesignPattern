@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.play.activity;
+package huangshun.it.com.androiddesignpattern.play.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,7 +19,7 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import huangshun.it.com.androiddesignpattern.R;
-import huangshun.it.com.androiddesignpattern.play.adapter.ViewPagerAdapter;
+import huangshun.it.com.androiddesignpattern.play.ui.adapter.ViewPagerAdapter;
 
 public class PlayMainActivity extends AppCompatActivity {
 
