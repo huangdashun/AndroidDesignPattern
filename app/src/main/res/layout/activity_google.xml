@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="huangshun.it.com.androiddesignpattern.googlemap.GoogleActivity">
+
+    <LinearLayout
+        android:id="@+id/map_view_pan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_centerInParent="true"
+        android:paddingTop="25dp">
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="35dp"
+            android:src="@drawable/selector_map_location"/>
+    </RelativeLayout>
+</RelativeLayout>

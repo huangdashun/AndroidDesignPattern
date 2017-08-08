@@ -20,6 +20,7 @@ import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.ble.BleActivity;
 import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
 import huangshun.it.com.androiddesignpattern.dagger2.demo2.DaggerComponentActivity;
+import huangshun.it.com.androiddesignpattern.googlemap.GoogleActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
 import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayMainActivity;
@@ -68,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnBle;
     @BindView(R.id.btn_google_map)
     Button mBtnGoogleMap;
+    @BindView(R.id.btn_google)
+    Button mBtnGoogle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +134,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
-            , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map})
+            , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
+            , R.id.btn_google})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_messenger://信使
@@ -178,8 +183,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_ble://蓝牙
                 startActivity(new Intent(MainActivity.this, BleActivity.class));
                 break;
-            case R.id.btn_google_map://谷歌地图
+            case R.id.btn_google_map://谷歌地图和百度地图切换
                 startActivity(new Intent(MainActivity.this, MainMapActivity.class));
+                break;
+            case R.id.btn_google://谷歌地图单独的
+                startActivity(new Intent(MainActivity.this, GoogleActivity.class));
                 break;
         }
     }
