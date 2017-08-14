@@ -15,11 +15,15 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import huangshun.it.com.androiddesignpattern.R;
+import huangshun.it.com.androiddesignpattern.play.MyApplication;
 import huangshun.it.com.androiddesignpattern.play.bean.PageBean;
-import huangshun.it.com.androiddesignpattern.play.presenter.RecommendPresenter;
+import huangshun.it.com.androiddesignpattern.play.di.component.DaggerRecommendComponent;
+import huangshun.it.com.androiddesignpattern.play.di.module.RecommendModule;
 import huangshun.it.com.androiddesignpattern.play.presenter.contract.RecommendContract;
 import huangshun.it.com.androiddesignpattern.play.ui.adapter.RecommendAdapter;
 
@@ -33,8 +37,10 @@ public class RecommendFragment extends Fragment implements RecommendContract.vie
     private static final String TAG = "RecommendFragment";
 
     private RecommendContract.presenter mPresenter;
-    private RecommendPresenter mRecommendPresenter;
-    private ProgressDialog mProgressDialog;
+    @Inject
+    RecommendContract.presenter mRecommendPresenter;
+    @Inject
+    ProgressDialog mProgressDialog;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,8 +53,12 @@ public class RecommendFragment extends Fragment implements RecommendContract.vie
         View view = inflater.inflate(R.layout.fragment_recomend, container, false);
         ButterKnife.bind(this, view);
 
-        mRecommendPresenter = new RecommendPresenter(this);
-        mProgressDialog = new ProgressDialog(getActivity());
+        DaggerRecommendComponent.builder().
+                recommendModule(new RecommendModule(this))
+                .appComponent(((MyApplication) (getActivity().getApplication())).getAppComponent())
+                .build().inject(this);
+        mRecommendPresenter.getResult();
+
         mProgressDialog.setCanceledOnTouchOutside(false);
         return view;
     }
@@ -56,7 +66,8 @@ public class RecommendFragment extends Fragment implements RecommendContract.vie
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mRecommendPresenter.getResult();
+        //        DaggerRecommendComponent.create();
+
     }
 
 

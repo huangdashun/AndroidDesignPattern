@@ -1,5 +1,7 @@
 package huangshun.it.com.androiddesignpattern.play.presenter;
 
+import javax.inject.Inject;
+
 import huangshun.it.com.androiddesignpattern.play.bean.PageBean;
 import huangshun.it.com.androiddesignpattern.play.data.RecommendModel;
 import huangshun.it.com.androiddesignpattern.play.presenter.contract.RecommendContract;
@@ -14,12 +16,12 @@ import retrofit2.Response;
 public class RecommendPresenter implements RecommendContract.presenter {
     RecommendContract.view mView;
 
+    @Inject
     RecommendModel mModel;
 
-    public RecommendPresenter(RecommendContract.view view) {
+    public RecommendPresenter(RecommendContract.view view, RecommendModel model) {
         this.mView = view;
-        mView.setPresenter(this);
-        mModel = new RecommendModel();
+        this.mModel = model;
     }
 
     @Override

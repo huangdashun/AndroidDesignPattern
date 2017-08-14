@@ -18,8 +18,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.ble.BleActivity;
-import huangshun.it.com.androiddesignpattern.dagger2.demo.Dagger2Activity;
-import huangshun.it.com.androiddesignpattern.dagger2.demo2.DaggerComponentActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
 import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayMainActivity;
@@ -146,13 +144,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, MySDKActivity.class));
                 break;
             case R.id.btn_dagger2:
-                startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
+//                startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
                 break;
             case R.id.btn_memoto:
                 startActivity(new Intent(MainActivity.this, MemotoActivity.class));
                 break;
             case R.id.btn_dagger_component:
-                startActivity(new Intent(MainActivity.this, DaggerComponentActivity.class));
+//                startActivity(new Intent(MainActivity.this, DaggerComponentActivity.class));
                 break;
             case R.id.btn_rx:
                 startActivity(new Intent(MainActivity.this, RxJavaActivity.class));

@@ -1,18 +1,17 @@
-package huangshun.it.com.androiddesignpattern.dagger2.annotation;
+package huangshun.it.com.androiddesignpattern.play.di;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 
-import javax.inject.Qualifier;
+import javax.inject.Scope;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Created by hs on 2017/7/19.
+ * Created by hs on 2017/8/14.
  */
-@Qualifier
+@Scope
 @Documented
 @Retention(RUNTIME)
-public @interface Text {
-
+public @interface FragmentScope {
 }

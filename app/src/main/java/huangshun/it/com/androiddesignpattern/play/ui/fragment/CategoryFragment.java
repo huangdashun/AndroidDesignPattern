@@ -9,16 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import huangshun.it.com.androiddesignpattern.R;
-import huangshun.it.com.androiddesignpattern.play.bean.PageBean;
-import huangshun.it.com.androiddesignpattern.play.http.ApiService;
-import huangshun.it.com.androiddesignpattern.play.http.HttpManager;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 /**
  * Created by hs on 2017/8/2.
@@ -59,25 +51,6 @@ public class CategoryFragment extends Fragment {
     }
 
     private void initData() {
-        HttpManager httpManager = new HttpManager();
-        Retrofit retrofit = httpManager.getRetrofit(httpManager.getOkHttpClient());
-        ApiService apiService = retrofit.create(ApiService.class);
-        Call<PageBean> apkData = apiService.getApkData("{'page':0}");
-        apkData.enqueue(new Callback<PageBean>() {
-            @Override
-            public void onResponse(Call<PageBean> call, Response<PageBean> response) {
-                PageBean body = response.body();
-                int status = body.getStatus();
-                Log.i(TAG, "status:" + status);
-                Toast.makeText(getActivity(), "status", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<PageBean> call, Throwable t) {
-                Toast.makeText(getActivity(), "失败", Toast.LENGTH_SHORT).show();
-                Log.i(TAG, t.toString());
-            }
-        });
     }
 }
 

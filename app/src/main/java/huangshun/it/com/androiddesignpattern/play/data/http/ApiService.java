@@ -1,4 +1,4 @@
-package huangshun.it.com.androiddesignpattern.play.http;
+package huangshun.it.com.androiddesignpattern.play.data.http;
 
 import huangshun.it.com.androiddesignpattern.play.bean.PageBean;
 import retrofit2.Call;
