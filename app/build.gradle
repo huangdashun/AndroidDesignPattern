@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId "huangshun.it.com.androiddesignpattern"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -65,21 +65,22 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     //rxbinding
-//    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    //    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     //retrofit
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-
     provided 'org.glassfish:javax.annotation:10.0-b28'
-//    谷歌服务
+    //    谷歌服务
     compile 'com.google.android.gms:play-services-maps:10.2.0'
     //高德服务
     compile 'com.amap.api:3dmap:latest.integration'
     compile 'com.amap.api:location:latest.integration'
-//    字体图标
+    //    字体图标
     compile 'com.mikepenz:iconics-core:2.8.2@aar'
     compile 'com.mikepenz:ionicons-typeface:2.0.1.2@aar'
-
     compile 'com.squareup.picasso:picasso:2.5.2'
+
+    compile 'com.google.android.gms:play-services-location:10.2.0'
+    compile 'com.google.android.gms:play-services-places:10.2.0'
 }
