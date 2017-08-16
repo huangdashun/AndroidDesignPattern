@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 // 添加其他插件
 apply plugin: 'com.neenbedankt.android-apt'//添加 apt 命令
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -31,7 +32,10 @@ android {
     lintOptions {
         abortOnError false
     }
-
+    greendao {
+        schemaVersion 4
+        targetGenDir 'src/main/java'
+    }
 }
 
 dependencies {
@@ -40,47 +44,35 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':mysdk')
-    //RxJava的依赖包
-    //RxAndroid的依赖包
-    //    compile 'io.reactivex.rxjava2:rxjava:2.0.3'
-    //    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile files('libs/annotationtest.jar')
     task processorTask(type: Exec) {
         commandLine 'cp', '../annotationtest/build/libs/annotationtest.jar', 'libs/'
     }
     processorTask.dependsOn(':annotationtest:build')
     preBuild.dependsOn(processorTask)
-    testCompile 'junit:junit:4.12'
-    //drawerlayout
+
+    // add library
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:25.3.1'
-    //dagger2
     compile 'com.google.dagger:dagger:2.9'
-    apt 'com.google.dagger:dagger-compiler:2.9'
-    //butterknife
     compile 'com.jakewharton:butterknife:8.5.1'
-    apt 'com.jakewharton:butterknife-compiler:8.5.1'
-    //oKHttp
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-    //rxbinding
-    //    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
-    //retrofit
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
-    //    谷歌服务
     compile 'com.google.android.gms:play-services-maps:10.2.0'
-    //高德服务
     compile 'com.amap.api:3dmap:latest.integration'
     compile 'com.amap.api:location:latest.integration'
-    //    字体图标
     compile 'com.mikepenz:iconics-core:2.8.2@aar'
     compile 'com.mikepenz:ionicons-typeface:2.0.1.2@aar'
     compile 'com.squareup.picasso:picasso:2.5.2'
-
     compile 'com.google.android.gms:play-services-location:10.2.0'
     compile 'com.google.android.gms:play-services-places:10.2.0'
+    compile 'org.greenrobot:greendao:3.2.2'
+    testCompile 'junit:junit:4.12'
+    apt 'com.google.dagger:dagger-compiler:2.9'
+    apt 'com.jakewharton:butterknife-compiler:8.5.1'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }

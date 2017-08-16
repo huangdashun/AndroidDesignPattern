@@ -10,6 +10,16 @@
         android:orientation="vertical"
         tools:context="huangshun.it.com.androiddesignpattern.MainActivity">
         <Button
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机市场助手" />
+        <Button
+            android:id="@+id/btn_green_dao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="green dao3" />
+        <Button
             android:id="@+id/btn_google"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,11 +31,7 @@
             android:layout_height="wrap_content"
             android:text="谷歌地图和百度地图切换" />
 
-        <Button
-            android:id="@+id/btn_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="手机市场助手" />
+
 
 
         <Button

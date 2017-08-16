@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.ble.BleActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
+import huangshun.it.com.androiddesignpattern.greendao.GreenDao3Activity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
 import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayMainActivity;
 import huangshun.it.com.androiddesignpattern.retrofit.RetrofitActivity;
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnBle;
     @BindView(R.id.btn_google_map)
     Button mBtnGoogleMap;
+    @BindView(R.id.btn_green_dao)
+    Button mBtnGreenDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,7 +131,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
-            , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map})
+            , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
+            , R.id.btn_green_dao})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_messenger://信使
@@ -178,6 +182,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_google_map://谷歌地图
                 startActivity(new Intent(MainActivity.this, MainMapActivity.class));
+                break;
+            case R.id.btn_green_dao://green dao3
+                startActivity(new Intent(MainActivity.this, GreenDao3Activity.class));
                 break;
         }
     }

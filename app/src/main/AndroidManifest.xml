@@ -9,8 +9,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,14 +18,13 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality. 
+         location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -63,10 +60,10 @@
         <activity android:name=".mvp.MVPBaseActivity" />
         <activity android:name=".unit8_7.ZhuangTaiActivity" />
         <activity android:name=".unit8_7.LoginActivity" />
-        <!--<activity android:name=".dagger2.demo.Dagger2Activity" />-->
-        <!--<activity android:name=".dagger2.demo.DaggerDifInsActivity" />-->
+        <!-- <activity android:name=".dagger2.demo.Dagger2Activity" /> -->
+        <!-- <activity android:name=".dagger2.demo.DaggerDifInsActivity" /> -->
         <activity android:name=".unit13_7.MemotoActivity" />
-        <!--<activity android:name=".dagger2.demo2.DaggerComponentActivity" />-->
+        <!-- <activity android:name=".dagger2.demo2.DaggerComponentActivity" /> -->
         <activity android:name=".rxjava.demo2.RxJavaActivity" />
         <activity android:name=".rxjava.demo3.RxSearchActivity" />
         <activity android:name=".rxjava.demo4.RxPicActivity" />
@@ -81,7 +78,7 @@
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
@@ -92,10 +89,13 @@
 
         <activity
             android:name=".googlemap.MainMapActivity"
-            android:label="@string/title_activity_google_map"></activity>
+            android:label="@string/title_activity_google_map" />
+
         <service
             android:name="com.amap.api.location.APSService"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".greendao.GreenDao3Activity"></activity>
     </application>
 
 </manifest>
