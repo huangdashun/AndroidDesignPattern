@@ -4,8 +4,7 @@ package huangshun.it.com.androiddesignpattern.play.presenter;
  * Created by hs on 2017/8/5.
  */
 
-public interface BaseView<T> {
-    void setPresenter(T t);
+public interface BaseView {
 
     void showLoading();
 

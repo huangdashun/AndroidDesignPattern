@@ -59,5 +59,6 @@ public class GreenDao3Activity extends AppCompatActivity {
         User likeuser = userDao.queryBuilder().where(UserDao.Properties.Username.like("hu%")).build().unique();
         Log.i(TAG, "LIKE:" + likeuser.toString());
 
+
     }
 }

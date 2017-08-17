@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="huangshun.it.com.androiddesignpattern">
+          package="huangshun.it.com.androiddesignpattern">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <!-- 蓝牙开发相关的权限 -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:name=".play.MyApplication"
@@ -38,40 +38,40 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
         <service
             android:name=".test.IPC.messenger.MessengerService"
-            android:process=":remote" />
+            android:process=":remote"/>
 
-        <activity android:name=".test.IPC.messenger.MessengerActivity" />
+        <activity android:name=".test.IPC.messenger.MessengerActivity"/>
 
         <service
             android:name=".test.IPC.aidl.BookManagerService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
 
-        <activity android:name=".test.IPC.aidl.BookManagerActivity" />
-        <activity android:name=".test.handler.HandlerDemoActivity" />
-        <activity android:name=".mvp.MVPBaseActivity" />
-        <activity android:name=".unit8_7.ZhuangTaiActivity" />
-        <activity android:name=".unit8_7.LoginActivity" />
+        <activity android:name=".test.IPC.aidl.BookManagerActivity"/>
+        <activity android:name=".test.handler.HandlerDemoActivity"/>
+        <activity android:name=".mvp.MVPBaseActivity"/>
+        <activity android:name=".unit8_7.ZhuangTaiActivity"/>
+        <activity android:name=".unit8_7.LoginActivity"/>
         <!-- <activity android:name=".dagger2.demo.Dagger2Activity" /> -->
         <!-- <activity android:name=".dagger2.demo.DaggerDifInsActivity" /> -->
-        <activity android:name=".unit13_7.MemotoActivity" />
+        <activity android:name=".unit13_7.MemotoActivity"/>
         <!-- <activity android:name=".dagger2.demo2.DaggerComponentActivity" /> -->
-        <activity android:name=".rxjava.demo2.RxJavaActivity" />
-        <activity android:name=".rxjava.demo3.RxSearchActivity" />
-        <activity android:name=".rxjava.demo4.RxPicActivity" />
-        <activity android:name=".okhttp3.OkHttpActivity" />
-        <activity android:name=".retrofit.RetrofitActivity" />
-        <activity android:name=".test.phonetype.PhoneTypeActivity" />
-        <activity android:name=".play.ui.activity.PlayMainActivity" />
-        <activity android:name=".ble.BleActivity" />
+        <activity android:name=".rxjava.demo2.RxJavaActivity"/>
+        <activity android:name=".rxjava.demo3.RxSearchActivity"/>
+        <activity android:name=".rxjava.demo4.RxPicActivity"/>
+        <activity android:name=".okhttp3.OkHttpActivity"/>
+        <activity android:name=".retrofit.RetrofitActivity"/>
+        <activity android:name=".test.phonetype.PhoneTypeActivity"/>
+        <activity android:name=".play.ui.activity.PlayMainActivity"/>
+        <activity android:name=".ble.BleActivity"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -82,20 +82,22 @@
         -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="2e7b47cbf165287269e266d1a02407fe" />
+            android:value="2e7b47cbf165287269e266d1a02407fe"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="@string/google_maps_key"/>
 
         <activity
             android:name=".googlemap.MainMapActivity"
-            android:label="@string/title_activity_google_map" />
+            android:label="@string/title_activity_google_map"/>
 
         <service
             android:name="com.amap.api.location.APSService"
-            android:exported="true" />
+            android:exported="true"/>
 
-        <activity android:name=".greendao.GreenDao3Activity"></activity>
+        <activity android:name=".greendao.GreenDao3Activity"/>
+        <activity android:name=".play.ui.activity.PlayBaseActivity">
+        </activity>
     </application>
 
 </manifest>

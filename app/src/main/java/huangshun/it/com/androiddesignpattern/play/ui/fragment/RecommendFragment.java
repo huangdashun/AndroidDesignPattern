@@ -1,16 +1,10 @@
 package huangshun.it.com.androiddesignpattern.play.ui.fragment;
 
 import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.util.List;
@@ -18,12 +12,12 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import huangshun.it.com.androiddesignpattern.R;
-import huangshun.it.com.androiddesignpattern.play.MyApplication;
 import huangshun.it.com.androiddesignpattern.play.bean.PageBean;
+import huangshun.it.com.androiddesignpattern.play.di.component.AppComponent;
 import huangshun.it.com.androiddesignpattern.play.di.component.DaggerRecommendComponent;
 import huangshun.it.com.androiddesignpattern.play.di.module.RecommendModule;
+import huangshun.it.com.androiddesignpattern.play.presenter.RecommendPresenter;
 import huangshun.it.com.androiddesignpattern.play.presenter.contract.RecommendContract;
 import huangshun.it.com.androiddesignpattern.play.ui.adapter.RecommendAdapter;
 
@@ -31,56 +25,33 @@ import huangshun.it.com.androiddesignpattern.play.ui.adapter.RecommendAdapter;
  * Created by hs on 2017/8/2.
  */
 
-public class RecommendFragment extends Fragment implements RecommendContract.view {
+public class RecommendFragment extends BaseFragment<RecommendPresenter> implements RecommendContract.view {
     @BindView(R.id.recycle_view)
     RecyclerView mRecycleView;
     private static final String TAG = "RecommendFragment";
-
-    private RecommendContract.presenter mPresenter;
-    @Inject
-    RecommendContract.presenter mRecommendPresenter;
     @Inject
     ProgressDialog mProgressDialog;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public int getContentView() {
+        return R.layout.fragment_recomend;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_recomend, container, false);
-        ButterKnife.bind(this, view);
-
-        DaggerRecommendComponent.builder().
-                recommendModule(new RecommendModule(this))
-                .appComponent(((MyApplication) (getActivity().getApplication())).getAppComponent())
-                .build().inject(this);
-        mRecommendPresenter.getResult();
+    public void init() {
+        mBasePresent.getResult();
 
         mProgressDialog.setCanceledOnTouchOutside(false);
-        return view;
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        //        DaggerRecommendComponent.create();
-
+    public void setAppComponent(AppComponent appcomponent) {
+        DaggerRecommendComponent.builder().
+                recommendModule(new RecommendModule(this))
+                .appComponent(appcomponent)
+                .build().inject(this);
     }
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
-
-    @Override
-    public void setPresenter(RecommendContract.presenter presenter) {
-        this.mPresenter = presenter;
-    }
 
     @Override
     public void showLoading() {

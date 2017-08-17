@@ -24,8 +24,8 @@ public class RecommendModule {
     }
 
     @Provides
-    public RecommendContract.presenter providerRecommendPresenter(RecommendContract.view view, RecommendModel model) {
-        return new RecommendPresenter(view, model);
+    public RecommendPresenter providerRecommendPresenter(RecommendContract.view view, RecommendModel model) {
+        return new RecommendPresenter(model, view);
     }
 
     @Provides

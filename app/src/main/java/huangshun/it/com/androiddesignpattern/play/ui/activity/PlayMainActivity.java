@@ -1,27 +1,22 @@
 package huangshun.it.com.androiddesignpattern.play.ui.activity;
 
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.mikepenz.iconics.context.IconicsLayoutInflater;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import huangshun.it.com.androiddesignpattern.R;
+import huangshun.it.com.androiddesignpattern.play.di.component.AppComponent;
 import huangshun.it.com.androiddesignpattern.play.ui.adapter.ViewPagerAdapter;
 
-public class PlayMainActivity extends AppCompatActivity {
+public class PlayMainActivity extends PlayBaseActivity {
 
     private static final String TAG = "PlayMainActivity";
     @BindView(R.id.navigation_view)
@@ -36,15 +31,22 @@ public class PlayMainActivity extends AppCompatActivity {
     ViewPager mViewpager;
     private View mHeaderView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        LayoutInflaterCompat.setFactory(getLayoutInflater(), new IconicsLayoutInflater(getDelegate()));//iconics
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play_main);
-        ButterKnife.bind(this);
-        initDrawerLayout();
+    private AppComponent mAppComponent;
 
+    @Override
+    public int getContentView() {
+        return R.layout.activity_play_main;
+    }
+
+    @Override
+    public void init() {
+        initDrawerLayout();
         initTabLayout();
+    }
+
+    @Override
+    public void setAppComponent(AppComponent appComponent) {
+        mAppComponent = appComponent;
     }
 
     private void initTabLayout() {
