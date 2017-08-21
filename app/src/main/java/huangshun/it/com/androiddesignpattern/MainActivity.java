@@ -21,7 +21,7 @@ import huangshun.it.com.androiddesignpattern.ble.BleActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.greendao.GreenDao3Activity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
-import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayMainActivity;
+import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayWelcomeActivity;
 import huangshun.it.com.androiddesignpattern.retrofit.RetrofitActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo2.RxJavaActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo3.RxSearchActivity;
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, PhoneTypeActivity.class));
                 break;
             case R.id.btn_play://手机助手
-                startActivity(new Intent(MainActivity.this, PlayMainActivity.class));
+                startActivity(new Intent(MainActivity.this, PlayWelcomeActivity.class));
                 break;
             case R.id.btn_ble://蓝牙
                 startActivity(new Intent(MainActivity.this, BleActivity.class));

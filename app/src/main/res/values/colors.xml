@@ -7,4 +7,9 @@
     <color name="green_1">#08CFA7</color>
     <color name="green_2_15">#2D00AEA4</color>
     <color name="green_2">#00AEA4</color>
+
+    <color name="color_bg_guide1">#e74144</color>
+    <color name="color_bg_guide2">#5e98c9</color>
+    <color name="color_bg_guide3">#8eb021</color>
+    <color name="color_w">#FFF</color>
 </resources>

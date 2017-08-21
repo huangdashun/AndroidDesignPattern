@@ -31,6 +31,7 @@ public class RecommendFragment extends BaseFragment<RecommendPresenter> implemen
     private static final String TAG = "RecommendFragment";
     @Inject
     ProgressDialog mProgressDialog;
+    private boolean mVisble =false;
 
     @Override
     public int getContentView() {
@@ -52,10 +53,18 @@ public class RecommendFragment extends BaseFragment<RecommendPresenter> implemen
                 .build().inject(this);
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        mVisble = isVisibleToUser;
+
+    }
 
     @Override
     public void showLoading() {
-        mProgressDialog.show();
+        if(mVisble){
+            mProgressDialog.show();
+        }
     }
 
     @Override

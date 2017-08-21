@@ -36,6 +36,14 @@ android {
         schemaVersion 4
         targetGenDir 'src/main/java'
     }
+    productFlavors {
+        dev {
+            resValue "string", "app_name", '"pattern"'
+        }
+        gm {
+        }
+
+    }
 }
 
 dependencies {
@@ -50,7 +58,6 @@ dependencies {
     }
     processorTask.dependsOn(':annotationtest:build')
     preBuild.dependsOn(processorTask)
-
     // add library
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
@@ -72,6 +79,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:10.2.0'
     compile 'com.google.android.gms:play-services-places:10.2.0'
     compile 'org.greenrobot:greendao:3.2.2'
+    compile 'com.eftimoff:android-pathview:1.0.8@aar'
     testCompile 'junit:junit:4.12'
     apt 'com.google.dagger:dagger-compiler:2.9'
     apt 'com.jakewharton:butterknife-compiler:8.5.1'
