@@ -8,4 +8,6 @@
     <string name="guide_1">全新改版</string>
     <string name="guide_2">视频购物</string>
     <string name="guide_3">评价晒图</string>
+
+    <string name="not_create_file">无法创建文件</string>
 </resources>

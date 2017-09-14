@@ -96,10 +96,12 @@
             android:exported="true" />
 
         <activity android:name=".greendao.GreenDao3Activity" />
-        <activity android:name=".play.ui.activity.PlayBaseActivity"></activity>
-        <activity android:name=".play.ui.activity.PlayWelcomeActivity"></activity>
-        <activity android:name=".play.ui.activity.PlayGuideActivity"
-            android:theme="@style/AppTheme.NoTitle.FullScreen"></activity>
+        <activity android:name=".play.ui.activity.PlayBaseActivity" />
+        <activity android:name=".play.ui.activity.PlayWelcomeActivity" />
+        <activity
+            android:name=".play.ui.activity.PlayGuideActivity"
+            android:theme="@style/AppTheme.NoTitle.FullScreen" />
+        <activity android:name=".file.FileActivity"></activity>
     </application>
 
 </manifest>
