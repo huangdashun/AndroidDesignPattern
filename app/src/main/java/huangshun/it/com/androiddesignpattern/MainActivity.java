@@ -22,6 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.ble.BleActivity;
+import huangshun.it.com.androiddesignpattern.brainview.BrainWaveActivity;
 import huangshun.it.com.androiddesignpattern.file.FileActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.greendao.GreenDao3Activity;
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnGoogle;
     @BindView(R.id.btn_file)
     Button mBtnFile;
+    @BindView(R.id.btn_brainwave)
+    Button mBtnBrainWave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
             , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
-            , R.id.btn_green_dao, R.id.btn_file})
+            , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_messenger://信使
@@ -250,6 +253,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_file://文件下载,扫描
                 startActivity(new Intent(MainActivity.this, FileActivity.class));
+                break;
+            case R.id.btn_brainwave://脑波图
+                startActivity(new Intent(MainActivity.this, BrainWaveActivity.class));
                 break;
 
         }
