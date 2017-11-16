@@ -9,7 +9,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="huangshun.it.com.androiddesignpattern.MainActivity">
-
+        <Button
+            android:id="@+id/btn_pace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="配速"/>
         <Button
             android:id="@+id/btn_brainwave"
             android:layout_width="wrap_content"

@@ -10,4 +10,10 @@
     <string name="guide_3">评价晒图</string>
 
     <string name="not_create_file">无法创建文件</string>
+
+    <string name="pace_km">公里</string>
+    <string name="pace">配速</string>
+    <string name="avg">平均</string>
+
+    <string name="pace_less_km_tip">最后不足一公里用时 %1$s</string>
 </resources>

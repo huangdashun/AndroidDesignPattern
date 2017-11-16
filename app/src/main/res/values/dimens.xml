@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- bong pro-->
+    <dimen name="bong_pro_common_padding">15dp</dimen>
+</resources>

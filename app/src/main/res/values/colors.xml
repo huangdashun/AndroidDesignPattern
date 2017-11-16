@@ -4,12 +4,264 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="green_1">#08CFA7</color>
-    <color name="green_2_15">#2D00AEA4</color>
-    <color name="green_2">#00AEA4</color>
 
     <color name="color_bg_guide1">#e74144</color>
     <color name="color_bg_guide2">#5e98c9</color>
     <color name="color_bg_guide3">#8eb021</color>
     <color name="color_w">#FFF</color>
+
+    <!--common color-->
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="gray">#FF777777</color>
+    <color name="black">#FF000000</color>
+    <color name="black_bg_90">#DE000000</color>
+    <color name="black_bg_80">#CC000000</color>
+    <color name="black_bg_60">#99000000</color>
+    <color name="black_bg_50">#e5e5e5</color>
+    <color name="black_bg_30">#4D000000</color>
+    <color name="black_bg_20">#33000000</color>
+    <color name="black_bg_10">#1D000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="gray_light_9">#FF999999</color>
+    <color name="gray_light_f1">#FFF1F1F1</color>
+    <color name="gray_background">#FF3C3F41</color>
+    <color name="transparent">#00000000</color>
+    <color name="black_light">#20000000</color>
+    <color name="white_tip">#FFA4A4A4</color>
+    <color name="white_tip2">#CCFFFFFF</color>
+    <color name="orange_bg">#FFEE8511</color>
+    <color name="title_bg">#FFF7F7F7</color>
+    <color name="red">#FFFF0000</color>
+    <color name="set_split_line">#FF626262</color>
+
+    <!--b3_setting_bg-->
+    <color name="common_bg">#FFF7F7F7</color>
+    <color name="set_bg">#FF303030</color>
+    <color name="item_bg">#FF303030</color>
+    <color name="user_bg">#FFE1E1E1</color>
+    <color name="user_press_bg">#FFA1A1A1</color>
+    <color name="text_black_normal">#FF303030</color>
+    <color name="text_black_disable">#FF888888</color>
+
+    <color name="text_color_yellow">#F1F68912</color>
+    <color name="wave_yellow">#40F68912</color>
+    <color name="btn_bg_cancel">#FF303030</color>
+    <color name="btn_bg_yellow">#F68912</color>
+    <color name="btn_bg_yellow_pressed">#ffb744</color>
+    <color name="btn_bg_yellow_disable">#80F68912</color>
+    <color name="btn_yellow">#DB923A</color>
+    <color name="btn_yellow_pressed">#885320</color>
+    <color name="split_line">#A8F68912</color>
+    <color name="common_error">#CCE05250</color>
+    <color name="common_warn">#CCC16908</color>
+    <color name="common_success">#CC0BBA38</color>
+    <color name="sport_time_bg">#FF060606</color>
+
+    <!--user center-->
+
+    <color name="user_item_line">#FFC1C1C2</color>
+    <color name="user_item_bg">#FFEFEFF0</color>
+    <color name="user_item_text_color">#FF323232</color>
+    <color name="user_item_tip">#FF696969</color>
+
+
+    <!-- country pick-->
+    <color name="header_country_pick">#F2AD60</color>
+
+    <!-- bong day-->
+    <color name="black_bg">#202020</color>
+    <color name="bong_day_item_bg">#181818</color>
+
+    <color name="bong_color">#FFF68912</color>
+    <color name="no_bong_color">#FFB744</color>
+    <color name="sleep">#9540F6</color>
+    <color name="quiet">#404040</color>
+    <color name="block_charge">#1C6CCF</color>
+    <color name="block_other">#A5A5A5</color>
+    <color name="bong_item_info_color">#DB923A</color>
+    <color name="white_66">#A8FFFFFF</color>
+    <color name="child_bg">#262626</color>
+    <color name="bong_black_bg">#F2303030</color>
+
+    <!-- bong pro-->
+    <color name="unit_text_color">#4C4C4C</color>
+    <color name="deep_sleep_color">#450291</color>
+    <color name="light_sleep_color">#711fce</color>
+    <color name="wake_color">#ebb127</color>
+    <color name="bong_pro_bg">#f5f5f5</color>
+    <!--share-->
+    <color name="share_bg">#1d1d1d</color>
+    <color name="status_bar_color">#FF303030</color>
+    <!--<color name="bg_item_swiping_state">#ffddddff</color>-->
+    <!--<color name="bg_item_swiping_active_state">#ff9999ff</color>-->
+    <color name="step_top">#0D57A3</color>
+    <color name="step_bottom">#3898FC</color>
+    <color name="energy_top">#ED4C0D</color>
+    <color name="energy_bottom">#FFCC00</color>
+    <color name="heart_rate_top">#E20100</color>
+    <color name="heart_rate_bottom">#EA8F25</color>
+
+
+    <color name="batter_green">#31e435</color>
+    <color name="chart_grid_color">#9d9d9d</color>
+
+
+    <color name="circle_disable">#2DFFFFFF</color>
+    <color name="line_disable">#32FFFFFF</color>
+
+
+    <color name="signal_blue">#2662bc</color>
+    <color name="signal_green">#26bc69</color>
+    <color name="signal_red">#bc263b</color>
+
+    <color name="balance_ring">#88FFFFFF</color>
+    <color name="average_one">#F1333333</color>
+    <color name="average_two">#E2333333</color>
+    <color name="average_three">#CC333333</color>
+
+    <color name="user_one">#E1FFFFFF</color>
+    <color name="user_two">#D2FFFFFF</color>
+    <color name="user_three">#BCFFFFFF</color>
+    <color name="physical_start_color">#ffb311</color>
+    <color name="physical_bg">#f06b00</color>
+    <color name="progress_bg">#ff9307</color>
+    <color name="physical_white_bg">#f5f5f5</color>
+    <color name="timer_color">#f06b00</color>
+    <color name="rest_bg">#f68911</color>
+    <color name="arc_color">#ffdeba</color>
+
+    <color name="bar_chart_selected">#beddff</color>
+    <color name="sport_bg_end">#3189E1</color>
+    <color name="sport_bg_start">#123F8D</color>
+    <color name="sport_date_bg">#D5D6D6</color>
+    <color name="sport_bar_bottom">#3898FC</color>
+    <color name="sport_bar_top">#085099</color>
+    <color name="sport_x_text">#666666</color>
+    <color name="sport_left_axis">#C4C5C5</color>
+
+    <color name="sport_percent_down">#4C4C4C</color>
+    <color name="sport_percent_up">#26bc69</color>
+
+    <color name="report_title_bg">#ff9307</color>
+    <color name="report_sport_x_text">#4C4C4C</color>
+    <color name="heart_selected_bar">#99FFFFFF</color>
+    <color name="heart_bar">#4CFFFFFF</color>
+    <color name="report_heart_left_axis">#EDA5A4</color>
+
+    <color name="heart_bg_bottom">#FA9528</color>
+    <color name="heart_rate_color">#F06B00</color>
+
+    <color name="heart_bar_start">#F2FFFFFF</color>
+    <color name="heart_bar_end">#66FFFFFF</color>
+
+    <color name="report_heart_line_color">#E20301</color>
+    <color name="report_heart_bar_color">#E05250</color>
+    <color name="heart_line_color">#FA9528</color>
+
+    <color name="sleep_bg_top">#9540F6</color>
+    <color name="sleep_bg_bottom">#B06BFF</color>
+    <color name="report_date_picker_bg">#F7F7F7</color>
+    <color name="heart_bar_color">#FCEDED</color>
+    <color name="item_black_light">#16000000</color>
+
+    <color name="point_one">#cccccc</color>
+    <color name="point_two">#000000</color>
+    <color name="point_three">#666666</color>
+
+    <color name="bind_mac">#8d8d8d</color>
+    <color name="bind_result_bg">#999999</color>
+    <color name="bind_more">#CCCCCC</color>
+    <color name="bind_have_bg">#f68911</color>
+
+
+    <color name="good_2c">#2C08CFA7</color>
+    <color name="white_bg">#F1F1F1</color>
+
+    <!--主流颜色-->
+    <color name="red_1">#EB006E</color>
+    <color name="red_11">#BB285C</color>
+    <color name="red_2">#7E003B</color>
+    <color name="red_3">#EB6877</color>
+    <color name="red_4">#ec6f69</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_f7">#F7F7F7</color>
+    <color name="white_f2">#F2F2F2</color>
+    <color name="white_f0">#F0F0F0</color>
+    <color name="white_c">#CCCCCC</color>
+    <color name="white_9">#999999</color>
+    <color name="white_6">#666666</color>
+    <color name="white_3">#333333</color>
+
+    <color name="green_1">#08CFA7</color>
+    <color name="green_2">#00AEA4</color>
+    <color name="green_2_15">#2D00AEA4</color>
+    <color name="green_3">#007770</color>
+    <color name="green_4">#004635</color>
+
+    <color name="blue">#0079c4</color>
+    <color name="blue_light">#20C1D6</color>
+
+
+    <color name="dragon_bg">#007770</color>
+
+    <color name="level_one">#0088ff</color>
+    <color name="level_two">#08cfa7</color>
+    <color name="level_three">#18d62f</color>
+    <color name="level_four">#ffdf02</color>
+    <color name="level_five">#fd0000</color>
+    <!--跑步训练锁定状态圆圈的颜色-->
+    <color name="train_lock_circle">#e1e1e1</color>
+    <color name="train_record_bg">#15aea4</color>
+    <color name="train_achieve">#eb006e</color>
+
+    <color name="train_run_circle">#00aea4</color>
+    <color name="train_slow_circle">#eb006e</color>
+    <color name="train_fast_circle">#26ed47</color>
+    <color name="train_actual_speed">#1A05afa5</color>
+
+    <color name="top_sport">#08a9c9</color>
+    <color name="top_sleep">#6042bd</color>
+    <color name="top_weight">#307dcd</color>
+
+    <!--眼罩方面主要颜色 -->
+    <color name="purple_bg">#5248a9</color>
+    <color name="purple_action_bar_bg">#3b1c69</color>
+    <color name="purple_action_bar_bg_alpha">#803b1c69</color>
+    <color name="circle">#61a6f4</color>
+    <color name="dialog_fragment_back_color">#23113f</color>
+    <color name="long_press_back">#88000000</color>
+    <color name="music_download_cardinal">#f7f7f7</color>
+
+    <!--新pro页面-->
+    <color name="pro_sleep_title_color">#6e4eb8</color>
+    <color name="pro_sleep_time_color">#5528bc</color>
+    <color name="white_60">#99ffffff</color>
+    <color name="pro_markview_color">#00aea4</color>
+    <color name="pro_sport_state_bar_color">#00aea4</color>
+    <color name="pro_sport_top_color">#0796ab</color>
+    <color name="pro_xaxis_line_color">#999999</color>
+    <color name="pro_xaxis_text_color">#666666</color>
+    <color name="pro_yaxis_dash_color">#d0d0d0</color>
+    <color name="pro_step_bar_color">#2d87e4</color>
+    <color name="pro_energy_bar_color">#f79605</color>
+    <color name="pro_avg_line_color">#ffffff</color>
+    <color name="pro_heart_icon_text">#bb285c</color>
+    <color name="pro_heart_chart_warm_up">#0088ff</color>
+    <color name="pro_heart_chart_fat">#00aea4</color>
+    <color name="pro_heart_chart_heart">#18d62f</color>
+    <color name="pro_heart_chart_power">#ffd200</color>
+    <color name="pro_heart_chart_extremity">#fd0000</color>
+    <color name="pro_heart_chart_other">#999999</color>
+    <color name="pro_run_train_item_color">#f7f7f7</color>
+    <color name="pro_map_icon_bg">#66000000</color>
+    <color name="pro_map_icon_bg_click">#cc000000</color>
+
+    <color name="sport_chooser_normal">#20ada3</color>
+    <color name="sport_chooser_body_test">#2291c1</color>
+    <color name="sport_chooser_respite">#544aa6</color>
+
+    <color name="pro_pace_statistic_icon">#0088ff</color>
+    <color name="pro_pace_statistic_normal">#00aea4</color>
+    <color name="pro_pace_rect_bg">#99cccccc</color>
 </resources>

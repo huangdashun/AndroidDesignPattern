@@ -27,6 +27,7 @@ import huangshun.it.com.androiddesignpattern.file.FileActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.greendao.GreenDao3Activity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
+import huangshun.it.com.androiddesignpattern.pace.PaceActivity;
 import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayWelcomeActivity;
 import huangshun.it.com.androiddesignpattern.retrofit.RetrofitActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo2.RxJavaActivity;
@@ -81,6 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnFile;
     @BindView(R.id.btn_brainwave)
     Button mBtnBrainWave;
+    @BindView(R.id.btn_pace)
+    Button mBtnPace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
             , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
-            , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave})
+            , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave,R.id.btn_pace})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_messenger://信使
@@ -257,6 +260,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_brainwave://脑波图
                 startActivity(new Intent(MainActivity.this, BrainWaveActivity.class));
                 break;
+            case R.id.btn_pace://脑波图
+                startActivity(new Intent(MainActivity.this, PaceActivity.class));
+                break;
+
 
         }
     }
