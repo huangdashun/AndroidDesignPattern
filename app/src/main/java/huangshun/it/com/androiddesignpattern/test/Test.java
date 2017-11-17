@@ -1,35 +1,42 @@
 package huangshun.it.com.androiddesignpattern.test;
 
-import java.util.List;
-
 /**
  * Created by hs on 2017/7/31.
  */
 
 public class Test {
     public static void main(String[] args) {
-//        List<String> data = new ArrayList<>();
-//        if (insertData(data)) {
-//            System.out.println(data);
-//            System.out.println("main");
-//            for (String s : data) {
-//                System.out.println(s);
-//            }
+        //三个锁
+
+        Object a = new Object();
+        Object b = new Object();
+        Object c = new Object();
+
+        Thread aThread = new Thread(new ThreadTest("A", c, a));
+        Thread bThread = new Thread(new ThreadTest("B", a, b));
+        Thread cThread = new Thread(new ThreadTest("C", b, c));
+
+        aThread.start();
+//        try {
+//            Thread.sleep(100);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
 //        }
-        int[] a = new int[100];
-        a[0] = 100;
-        a[1] = 110;
-        System.out.println(a.length);
+        bThread.start();
+//        try {
+//            Thread.sleep(100);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        cThread.start();
+//        try {
+//            Thread.sleep(100);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+
     }
 
-    public static boolean insertData(List<String> data) {
-        data.add("abc");
-        data.add("ccc");
-        data.add("我试试");
-        for (String s : data) {
-            System.out.println("insertData");
-            System.out.println(s);
-        }
-        return true;
-    }
+
 }
