@@ -123,13 +123,23 @@ public class ProPaceChart extends View {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         mWidth = width;
         int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
-        if (heightSpecMode == MeasureSpec.AT_MOST) {//wrap_content
-            setMeasuredDimension(mWidth, mHeight);
+//        if (heightSpecMode == MeasureSpec.AT_MOST) {//wrap_content
+
+//        }
+        if (heightSpecMode == MeasureSpec.AT_MOST) {
+            Log.i(TAG, "Wrap_content");
+        } else if (heightSpecMode == MeasureSpec.UNSPECIFIED) {
+            Log.i(TAG, "UNSPECIFIED");
+        } else if (heightSpecMode == MeasureSpec.EXACTLY) {
+            Log.i(TAG, "EXACTLY");
+
+
         }
         //配速矩形占的总宽度为
         mPaceTotalWidth = mWidth - mRectLeft;
 
         calculatorRect();
+        setMeasuredDimension(mWidth, mHeight);
     }
 
     /**

@@ -2,8 +2,6 @@ package huangshun.it.com.androiddesignpattern.pace;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +9,7 @@ import java.util.List;
 import huangshun.it.com.androiddesignpattern.R;
 
 public class PaceActivity extends AppCompatActivity {
-    private ProPaceChart mProPaceChart;
+//    private ProPaceChart mProPaceChart;
     private List<Long> paceTimeList = new ArrayList<>();
     private Long mAvg;
     private Long mMax;
@@ -21,24 +19,25 @@ public class PaceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pace);
-        mProPaceChart = (ProPaceChart) findViewById(R.id.pace_chart);
+        setContentView(R.layout.activity_view_group);
+//        mProPaceChart = (ProPaceChart) findViewById(R.id.pace_chart);
 
         //initData();
 
         initData();
+
         initListener();
     }
 
     private void initListener() {
-        Button btn = (Button) findViewById(R.id.btn_click);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                paceTimeList = paceTimeList.subList(0, paceTimeList.size() - 1);
-                mProPaceChart.refreshView(paceTimeList, mAvg, mMax, mMin, mNoKmTime);
-            }
-        });
+//        Button btn = (Button) findViewById(R.id.btn_click);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                paceTimeList = paceTimeList.subList(0, paceTimeList.size() - 1);
+//                mProPaceChart.refreshView(paceTimeList, mAvg, mMax, mMin, mNoKmTime);
+//            }
+//        });
     }
 
     private void initData() {
@@ -63,7 +62,7 @@ public class PaceActivity extends AppCompatActivity {
         //时间
 //        String nokmTime = "00:04:23";
         mNoKmTime = 1100;
-        mProPaceChart.refreshView(paceTimeList, mAvg, mMax, mMin, mNoKmTime);
+//        mProPaceChart.refreshView(paceTimeList, mAvg, mMax, mMin, mNoKmTime);
 
     }
 }
