@@ -1,7 +1,5 @@
 package huangshun.it.com.androiddesignpattern.test.baodian.reflect;
 
-import org.greenrobot.greendao.annotation.Entity;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -52,7 +50,7 @@ public class ReflectTest {
         //获取class对象的所有注解
         Annotation[] annotations = peopleClass.getAnnotations();
         //获取class对象的执行注解
-        Entity annotation = peopleClass.getAnnotation(Entity.class);
+//        Entity annotation = peopleClass.getAnnotation(Entity.class);
         //获取class对象的直接超类的Type(即带有泛型的父类)
         Type genericSuperclass = peopleClass.getGenericSuperclass();
         //获取class对象的所有接口的type集合
