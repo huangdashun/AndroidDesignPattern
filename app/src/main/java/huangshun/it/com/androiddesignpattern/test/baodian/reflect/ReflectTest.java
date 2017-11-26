@@ -80,5 +80,6 @@ public class ReflectTest {
         ageField.setInt(peopleObject, 23);
         //4.获取值
         int age = ageField.getInt(peopleObject);
+        //这句是多加的
     }
 }
