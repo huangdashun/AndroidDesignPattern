@@ -9,4 +9,4 @@
 .externalNativeBuild
 libs/
 src/main/res/drawable/
-.idea
+/.idea
