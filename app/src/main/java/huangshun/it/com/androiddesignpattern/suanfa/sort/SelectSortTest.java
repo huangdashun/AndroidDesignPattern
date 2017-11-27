@@ -119,7 +119,7 @@ public class SelectSortTest {
 
     private static void syso(int[] arr) {
         for (int anArr : arr) {
-            System.out.println(anArr);
+            System.out.println(anArr);{}
         }
     }
 
