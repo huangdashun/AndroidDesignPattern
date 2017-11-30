@@ -20,6 +20,7 @@ public class AnnotationTest {
 
             }
         }
+        double v = 1 + 2.5;
     }
 
     @MyAnnotation(name = "大顺子")

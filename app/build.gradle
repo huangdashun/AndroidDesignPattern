@@ -85,4 +85,6 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.9'
     apt 'com.jakewharton:butterknife-compiler:8.5.1'
     provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile files('/Users/huangshun/Downloads/stdlib.jar')
+    compile files('/Users/huangshun/Downloads/algs4.jar')
 }

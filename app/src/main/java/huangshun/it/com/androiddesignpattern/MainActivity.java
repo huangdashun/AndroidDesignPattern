@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_brainwave://脑波图
                 startActivity(new Intent(MainActivity.this, BrainWaveActivity.class));
                 break;
-            case R.id.btn_pace://脑波图
+            case R.id.btn_pace://配速图
                 startActivity(new Intent(MainActivity.this, PaceActivity.class));
                 break;
 
