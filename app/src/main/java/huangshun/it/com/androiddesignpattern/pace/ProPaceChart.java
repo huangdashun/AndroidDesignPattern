@@ -1,5 +1,7 @@
 package huangshun.it.com.androiddesignpattern.pace;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.DashPathEffect;
@@ -10,12 +12,11 @@ import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import huangshun.it.com.androiddesignpattern.R;
 import huangshun.it.com.androiddesignpattern.brainview.DisplayUtil;
@@ -47,7 +48,7 @@ public class ProPaceChart extends View {
     private String KM;
     private String PACE;
     private String AVG;
-
+    private float[] mRectFRight;//存放配速Right的集合
     //数据
     private List<Long> mPaceTimeList = new ArrayList<>();
     private Long mAvg;
@@ -127,11 +128,11 @@ public class ProPaceChart extends View {
 
 //        }
         if (heightSpecMode == MeasureSpec.AT_MOST) {
-            Log.i(TAG, "Wrap_content");
+//            Log.i(TAG, "Wrap_content");
         } else if (heightSpecMode == MeasureSpec.UNSPECIFIED) {
-            Log.i(TAG, "UNSPECIFIED");
+//            Log.i(TAG, "UNSPECIFIED");
         } else if (heightSpecMode == MeasureSpec.EXACTLY) {
-            Log.i(TAG, "EXACTLY");
+//            Log.i(TAG, "EXACTLY");
 
 
         }
@@ -194,7 +195,6 @@ public class ProPaceChart extends View {
         //绘制平均线
         mAvgLinePaint.setPathEffect(new DashPathEffect(new float[]{20, 10, 20, 10}, 0));
         RectF firstRectF = mPaceRectList.get(0);
-        Log.i(TAG, "firstRectF:" + DisplayUtil.px2Dp(getContext(), firstRectF.top));
         RectF lastRectF = mPaceRectList.get(mPaceRectList.size() - 1);
         Path path = new Path();
         float avgWidth = mPaceTotalWidth * (Integer.valueOf(String.valueOf(mAvg)) * 1.0f / Integer.valueOf(String.valueOf(mMax)));
@@ -236,6 +236,7 @@ public class ProPaceChart extends View {
      * @param canvas
      */
     private void drawPaceRect(Canvas canvas) {
+
         if (mPaceTimeList.size() == 0 || mPaceRectList.size() == 0) {
             return;
         }
@@ -246,15 +247,45 @@ public class ProPaceChart extends View {
         }
 
         //绘制具体的配速矩形块
+//        for (int i = 0; i < mPaceRectList.size(); i++) {
+//            if (Objects.equals(mMin, mPaceTimeList.get(i))) {//配速最小的变颜色
+//                mRectPaint.setColor(ContextCompat.getColor(getContext(), R.color.pro_pace_statistic_icon));
+//            } else {
+//                mRectPaint.setColor(ContextCompat.getColor(getContext(), R.color.pro_pace_statistic_normal));
+//            }
+//            canvas.drawRect(mPaceRectList.get(i), mRectPaint);
+//        }
+//        animatePaceRect();
         for (int i = 0; i < mPaceRectList.size(); i++) {
-            if (Objects.equals(mMin, mPaceTimeList.get(i))) {//配速最小的变颜色
-                mRectPaint.setColor(ContextCompat.getColor(getContext(), R.color.pro_pace_statistic_icon));
-            } else {
-                mRectPaint.setColor(ContextCompat.getColor(getContext(), R.color.pro_pace_statistic_normal));
-            }
-            canvas.drawRect(mPaceRectList.get(i), mRectPaint);
+            RectF paceRect = mPaceRectList.get(i);
+            RectF rectF = new RectF();
+            rectF.left = paceRect.left;
+            rectF.bottom = paceRect.bottom;
+            rectF.top = paceRect.top;
+            rectF.right = mRectFRight[i];
+            canvas.drawRect(rectF, mRectPaint);
         }
+    }
 
+
+
+    public void animatePaceRect() {
+        for (int i = 0; i < mPaceRectList.size(); i++) {
+            RectF rectF = mPaceRectList.get(i);
+            ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, rectF.right);
+            valueAnimator.setDuration(1200);
+            valueAnimator.setInterpolator(new DecelerateInterpolator());
+            int index = i;
+            valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    rectF.right = (float) animation.getAnimatedValue();
+                    mRectFRight[index] = rectF.right;
+                    postInvalidate();
+                }
+            });
+            valueAnimator.start();
+        }
     }
 
     /**
@@ -336,10 +367,11 @@ public class ProPaceChart extends View {
         mMax = max;
         mMin = min;
         mNoKmTime = noKmTime;
-
+        mRectFRight = new float[paceTimeList.size()];
         //后续要设置高度,待定
         mHeight = (int) DisplayUtil.dp2Px(getContext(), (paceTimeList.size() * 25 + 45));
         requestLayout();
         invalidate();
+        animatePaceRect();
     }
 }
