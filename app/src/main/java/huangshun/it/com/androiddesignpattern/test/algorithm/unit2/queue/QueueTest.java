@@ -9,8 +9,20 @@ import edu.princeton.cs.algs4.Queue;
 
 public class QueueTest {
     public static void main(String[] args) {
-        int[] arrayData = getArrayData();
-        System.out.println(arrayData.length);
+//        int[] arrayData = getArrayData();
+//        System.out.println(arrayData.length);
+
+        queueLinkedTest();
+    }
+
+    private static void queueLinkedTest() {
+        QueueLinked<Integer> queueLinked = new QueueLinked<>();
+        queueLinked.enqueue(1);
+        queueLinked.enqueue(2);
+        queueLinked.enqueue(3);
+        while (!queueLinked.isEmpty()) {
+            System.out.println(queueLinked.dequeue());
+        }
     }
 
     private static int[] getArrayData() {
