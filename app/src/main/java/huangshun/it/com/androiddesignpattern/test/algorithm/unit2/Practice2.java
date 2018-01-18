@@ -1,5 +1,8 @@
 package huangshun.it.com.androiddesignpattern.test.algorithm.unit2;
 
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.Stack;
+
 /**
  * Created by hs on 2017/12/8.
  */
@@ -10,7 +13,86 @@ public class Practice2 {
 //        test2();
 //        CircularRotation();
 //        test3();
-        test4();//
+//        test4();
+//        test5();
+//        String pop = "(";
+//        String pop2 = pop + ")";
+//        System.out.println(pop2);
+//        System.out.println(pop2.equals("()"));
+//        test6();
+        test7();
+    }
+
+    private static void test7() {
+    }
+
+    private static void test6() {
+        //1.3.9
+        In in = new In("/Users/huangshun/Desktop/test/new2");
+        Stack<String> operator = new Stack<>();//存放运算符
+        Stack<String> values = new Stack<>();//存放操作数
+        while (!in.isEmpty()) {//如果不为空
+            String s = in.readString();
+//            System.out.println("s:" + s);
+            if (s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/")) {
+                operator.push(s);
+            } else if (s.equals("(")) {//忽略
+
+            } else if (s.equals(")")) {
+                //从操作栈里弹出来两个，从运算符中弹出来一个
+                String secondValue = values.pop();
+                String firstValue = values.pop();
+                String tempOper = operator.pop();
+                String res = "(" + firstValue + tempOper + secondValue + ")";
+                System.out.println("res:" + res);
+                values.push(res);
+
+            } else {
+                //将操作数add进栈
+                values.push(s);
+            }
+//            System.out.println(s);
+        }
+        System.out.println(values.pop());
+    }
+
+    private static void test5() {
+        //1.3.4
+
+        In in = new In("/Users/huangshun/Desktop/test/new2");
+        Stack<String> leftOperator = new Stack<>();//左符号
+
+        while (!in.isEmpty()) {
+            String letter = in.readString();//读取每一个字母
+            System.out.println("letter:" + letter);
+            if (letter.equals("{")) {
+                leftOperator.push("{");
+            } else if (letter.equals("[")) {
+                leftOperator.push("[");
+            } else if (letter.equals("(")) {
+                leftOperator.push("(");
+            } else {
+                String pop = leftOperator.pop();
+                System.out.println("POP:" + pop);
+//                if (pop.equals("(") && letter.equals(")")) {
+//
+//                } else if (pop.equals("[") && letter.equals("]")) {
+//
+//                } else if (pop.equals("{") && letter.equals("}")) {
+//
+//                } else {
+//                    System.out.println("false");
+//                    return;
+//                }
+                if ((pop + ")").equals("()") || ((pop + "]").equals("[]")) || ((pop + "}").equals("{}"))) {
+
+                } else {
+                    System.out.println("false");
+                    return;
+                }
+            }
+        }
+        System.out.println(leftOperator.isEmpty());
     }
 
     private static void test4() {

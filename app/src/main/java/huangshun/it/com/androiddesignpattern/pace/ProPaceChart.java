@@ -12,6 +12,7 @@ import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
@@ -124,18 +125,26 @@ public class ProPaceChart extends View {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         mWidth = width;
         int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
+        int widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
 //        if (heightSpecMode == MeasureSpec.AT_MOST) {//wrap_content
 
 //        }
         if (heightSpecMode == MeasureSpec.AT_MOST) {
-//            Log.i(TAG, "Wrap_content");
+            Log.i(TAG, "Wrap_content");
         } else if (heightSpecMode == MeasureSpec.UNSPECIFIED) {
-//            Log.i(TAG, "UNSPECIFIED");
+            Log.i(TAG, "UNSPECIFIED");
         } else if (heightSpecMode == MeasureSpec.EXACTLY) {
-//            Log.i(TAG, "EXACTLY");
-
-
+            Log.i(TAG, "EXACTLY");
         }
+
+        if (widthSpecMode == MeasureSpec.AT_MOST) {
+            Log.i(TAG, "widthSpecMode:Wrap_content");
+        } else if (widthSpecMode == MeasureSpec.UNSPECIFIED) {
+            Log.i(TAG, "widthSpecMode:UNSPECIFIED");
+        } else if (widthSpecMode == MeasureSpec.EXACTLY) {
+            Log.i(TAG, "widthSpecMode:EXACTLY");
+        }
+
         //配速矩形占的总宽度为
         mPaceTotalWidth = mWidth - mRectLeft;
 

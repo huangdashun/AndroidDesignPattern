@@ -5,15 +5,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 
 import java.util.Calendar;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +22,7 @@ import huangshun.it.com.androiddesignpattern.brainview.BrainWaveActivity;
 import huangshun.it.com.androiddesignpattern.file.FileActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.greendao.GreenDao3Activity;
+import huangshun.it.com.androiddesignpattern.gson.GsonActivity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
 import huangshun.it.com.androiddesignpattern.pace.PaceActivity;
 import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayWelcomeActivity;
@@ -38,6 +35,8 @@ import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivit
 import huangshun.it.com.androiddesignpattern.test.phonetype.PhoneTypeActivity;
 import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
 import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
+import huangshun.it.com.androiddesignpattern.view.SuspendViewActivity;
+import huangshun.it.com.androiddesignpattern.viewdraghelper.ViewDragHelperActivity;
 import huangshun.it.com.mysdk.MySDKActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -84,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnBrainWave;
     @BindView(R.id.btn_pace)
     Button mBtnPace;
+    @BindView(R.id.btn_view_drag_helper)
+    Button mViewDragHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,54 +108,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    /**
-     * diffUtil的代码语法
-     */
-    public void diffUtil() {
-        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new DiffUtil.Callback() {
-            @Override
-            public int getOldListSize() {
-                return 0;
-            }
-
-            @Override
-            public int getNewListSize() {
-                return 0;
-            }
-
-            @Override
-            public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-                return false;
-            }
-
-            @Override
-            public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-                return false;
-            }
-        });
-        diffResult.dispatchUpdatesTo(new RecyclerView.Adapter() {
-            @Override
-            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                return null;
-            }
-
-            @Override
-            public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-            }
-
-            @Override
-            public int getItemCount() {
-                return 0;
-            }
-
-            @Override
-            public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, List payloads) {
-                super.onBindViewHolder(holder, position, payloads);
-            }
-        });
     }
 
     @Override
@@ -200,9 +153,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @OnClick({R.id.btn_rx, R.id.btn_messenger, R.id.btn_aidl, R.id.btn_zhuangtai, R.id.btn_sdk_test
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
             , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
-            , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave,R.id.btn_pace})
+            , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave, R.id.btn_pace,
+            R.id.btn_view_drag_helper, R.id.btn_gson,R.id.btn_suspend})
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_suspend:
+                startActivity(new Intent(MainActivity.this, SuspendViewActivity.class));
+                break;
+            case R.id.btn_gson:
+                startActivity(new Intent(MainActivity.this, GsonActivity.class));
+                break;
+            case R.id.btn_view_drag_helper:
+                startActivity(new Intent(MainActivity.this, ViewDragHelperActivity.class));
+                break;
             case R.id.btn_messenger://信使
                 startActivity(new Intent(MainActivity.this, MessengerActivity.class));
                 break;

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="huangshun.it.com.androiddesignpattern.viewdraghelper.ViewDragHelperActivity">
+
+    <huangshun.it.com.androiddesignpattern.viewdraghelper.CustomDragView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="100dp"
+            android:background="@color/red"
+            android:text="我是第一个" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="200dp"
+            android:background="#0f0"
+            android:text="我是第二个" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="300dp"
+            android:background="#ff0"
+            android:text="我是第三个" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="移动我" />
+    </huangshun.it.com.androiddesignpattern.viewdraghelper.CustomDragView>
+</LinearLayout>

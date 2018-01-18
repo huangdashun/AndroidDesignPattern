@@ -94,8 +94,6 @@ public class CustomLayout extends ViewGroup {
             View child = getChildAt(i);
             measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, 0);
         }
-        measureChildren(widthMeasureSpec, heightMeasureSpec);
-
         int count = getChildCount();
         if (widthMode == MeasureSpec.EXACTLY) {//精确的
             layoutWidth = widthSize;

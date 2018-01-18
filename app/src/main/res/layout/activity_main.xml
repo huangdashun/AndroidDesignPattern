@@ -1,140 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="huangshun.it.com.androiddesignpattern.MainActivity">
+
+        <Button
+            android:id="@+id/btn_suspend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="悬浮view" />
+
+        <Button
+            android:id="@+id/btn_gson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gson" />
+
+        <Button
+            android:id="@+id/btn_view_drag_helper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ViewDragHelper" />
+
         <Button
             android:id="@+id/btn_pace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="配速"/>
+            android:text="配速" />
+
         <Button
             android:id="@+id/btn_brainwave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="脑波图"/>
+            android:text="脑波图" />
 
         <Button
             android:id="@+id/btn_file"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="文件操作"/>
+            android:text="文件操作" />
 
         <Button
             android:id="@+id/btn_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="手机市场助手"/>
+            android:text="手机市场助手" />
 
         <Button
             android:id="@+id/btn_green_dao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="green dao3"/>
+            android:text="green dao3" />
 
         <Button
             android:id="@+id/btn_google"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="谷歌地图"/>
+            android:text="谷歌地图" />
 
         <Button
             android:id="@+id/btn_google_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="谷歌地图和百度地图切换"/>
+            android:text="谷歌地图和百度地图切换" />
 
 
         <Button
             android:id="@+id/btn_messenger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Messenger"/>
+            android:text="Messenger" />
 
         <Button
             android:id="@+id/btn_aidl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="aidl"/>
+            android:text="aidl" />
 
         <Button
             android:id="@+id/btn_zhuangtai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="状态模式"/>
+            android:text="状态模式" />
 
         <Button
             android:id="@+id/btn_sdk_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sdk_test"/>
+            android:text="sdk_test" />
 
         <Button
             android:id="@+id/btn_dagger2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="dagger2"/>
+            android:text="dagger2" />
 
         <Button
             android:id="@+id/btn_memoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="备忘录"/>
+            android:text="备忘录" />
 
         <Button
             android:id="@+id/btn_dagger_component"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="dagger组件化"/>
+            android:text="dagger组件化" />
 
         <Button
             android:id="@+id/btn_rx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="rxjava"/>
+            android:text="rxjava" />
 
         <Button
             android:id="@+id/btn_rx_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="关键词搜索"/>
+            android:text="关键词搜索" />
 
         <Button
             android:id="@+id/btn_rx_pic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="rxjava图片加载"/>
+            android:text="rxjava图片加载" />
 
         <Button
             android:id="@+id/btn_okhttp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="okhttp"/>
+            android:text="okhttp" />
 
         <Button
             android:id="@+id/btn_retrofit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="retrofit"/>
+            android:text="retrofit" />
 
         <Button
             android:id="@+id/btn_phone_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="手机类型判断"/>
+            android:text="手机类型判断" />
 
 
         <Button
             android:id="@+id/btn_ble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="蓝牙"/>
+            android:text="蓝牙" />
 
     </LinearLayout>
 </ScrollView>

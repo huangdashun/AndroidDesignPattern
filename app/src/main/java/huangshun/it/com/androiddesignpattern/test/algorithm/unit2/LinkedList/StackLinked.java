@@ -2,7 +2,7 @@ package huangshun.it.com.androiddesignpattern.test.algorithm.unit2.LinkedList;
 
 import android.support.annotation.NonNull;
 
-import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import huangshun.it.com.androiddesignpattern.test.algorithm.unit2.CommonIterator;
 
@@ -28,6 +28,18 @@ public class StackLinked<Item> implements Iterable<Item> {
     }
 
     /**
+     * 返回当前item，但是不弹出
+     *
+     * @return
+     */
+    public Item peek() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return firstNode.item;
+    }
+
+    /**
      * 入栈
      *
      * @param
@@ -45,9 +57,31 @@ public class StackLinked<Item> implements Iterable<Item> {
         return size == 0;
     }
 
+    /**
+     * 复制stack
+     *
+     * @param stack
+     * @param <T>
+     */
+    public static <T> StackLinked<T> Copy(StackLinked<T> stack) {
+        StackLinked<T> tempStack = new StackLinked<T>();
+        StackLinked<T> resultStack = new StackLinked<T>();
+        if (!stack.isEmpty()) {
+            CommonIterator<T> iterator = stack.iterator();
+            while (iterator.hasNext()) {
+                tempStack.push(iterator.next());
+            }
+            iterator = tempStack.iterator();
+            while (iterator.hasNext()) {
+                resultStack.push(iterator.next());
+            }
+        }
+        return resultStack;
+    }
+
     @NonNull
     @Override
-    public Iterator<Item> iterator() {
+    public CommonIterator<Item> iterator() {
         return new CommonIterator(firstNode);
     }
 }

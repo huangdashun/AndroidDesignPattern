@@ -12,7 +12,24 @@ public class QueueTest {
 //        int[] arrayData = getArrayData();
 //        System.out.println(arrayData.length);
 
-        queueLinkedTest();
+//        queueLinkedTest();
+        ResizingArrayQueueOfStrings queue = new ResizingArrayQueueOfStrings();
+        queue.enqueue("1");
+        queue.enqueue("2");
+        queue.enqueue("3");
+        queue.enqueue("4");
+        queue.enqueue("5");
+        queue.enqueue("6");
+        queue.enqueue("7");
+        queue.enqueue("8");
+        queue.enqueue("9");
+        int size = queue.getSize();
+        for (int i = 0; i < size - 7; i++) {
+            String item = queue.dequeue();
+            if (i == size - 7) {
+                System.out.println(item);
+            }
+        }
     }
 
     private static void queueLinkedTest() {

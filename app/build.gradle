@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 // 添加其他插件
 apply plugin: 'com.neenbedankt.android-apt'//添加 apt 命令
 apply plugin: 'com.jakewharton.butterknife'
@@ -18,6 +19,7 @@ android {
     defaultConfig {
         applicationId "huangshun.it.com.androiddesignpattern"
         minSdkVersion 15
+        multiDexEnabled true
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -92,4 +94,11 @@ dependencies {
     provided 'org.glassfish:javax.annotation:10.0-b28'
     compile files('/Users/huangshun/Downloads/stdlib.jar')
     compile files('/Users/huangshun/Downloads/algs4.jar')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.android.support:multidex:1.0.1'
 }
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'kotlin-android-extensions'

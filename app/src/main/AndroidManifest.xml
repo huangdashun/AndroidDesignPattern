@@ -102,8 +102,11 @@
             android:name=".play.ui.activity.PlayGuideActivity"
             android:theme="@style/AppTheme.NoTitle.FullScreen" />
         <activity android:name=".file.FileActivity" />
-        <activity android:name=".brainview.BrainWaveActivity"></activity>
-        <activity android:name=".pace.PaceActivity"></activity>
+        <activity android:name=".brainview.BrainWaveActivity" />
+        <activity android:name=".pace.PaceActivity" />
+        <activity android:name=".viewdraghelper.ViewDragHelperActivity" />
+        <activity android:name=".gson.GsonActivity" />
+        <activity android:name=".view.SuspendViewActivity"></activity>
     </application>
 
 </manifest>
