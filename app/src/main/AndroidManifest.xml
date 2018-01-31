@@ -106,7 +106,20 @@
         <activity android:name=".pace.PaceActivity" />
         <activity android:name=".viewdraghelper.ViewDragHelperActivity" />
         <activity android:name=".gson.GsonActivity" />
-        <activity android:name=".view.SuspendViewActivity"></activity>
+        <activity android:name=".view.SuspendViewActivity" />
+        <activity android:name=".event.EventActivity" />
+        <activity android:name=".test.IPC.aidl.AidlAccountActivity" />
+
+        <service
+            android:name=".test.IPC.aidl.AidlAccountService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.itdashun.aidl" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

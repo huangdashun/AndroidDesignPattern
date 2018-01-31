@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import huangshun.it.com.androiddesignpattern.ble.BleActivity;
 import huangshun.it.com.androiddesignpattern.brainview.BrainWaveActivity;
+import huangshun.it.com.androiddesignpattern.event.EventActivity;
 import huangshun.it.com.androiddesignpattern.file.FileActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.greendao.GreenDao3Activity;
@@ -30,7 +31,7 @@ import huangshun.it.com.androiddesignpattern.retrofit.RetrofitActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo2.RxJavaActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo3.RxSearchActivity;
 import huangshun.it.com.androiddesignpattern.rxjava.demo4.RxPicActivity;
-import huangshun.it.com.androiddesignpattern.test.IPC.aidl.BookManagerActivity;
+import huangshun.it.com.androiddesignpattern.test.IPC.aidl.AidlAccountActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
 import huangshun.it.com.androiddesignpattern.test.phonetype.PhoneTypeActivity;
 import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
@@ -154,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
             , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
             , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave, R.id.btn_pace,
-            R.id.btn_view_drag_helper, R.id.btn_gson,R.id.btn_suspend})
+            R.id.btn_view_drag_helper, R.id.btn_gson, R.id.btn_suspend, R.id.btn_event})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_suspend:
@@ -170,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, MessengerActivity.class));
                 break;
             case R.id.btn_aidl://aidl
-                startActivity(new Intent(MainActivity.this, BookManagerActivity.class));
+                startActivity(new Intent(MainActivity.this, AidlAccountActivity.class));
                 break;
             case R.id.btn_zhuangtai:
                 startActivity(new Intent(MainActivity.this, ZhuangTaiActivity.class));
@@ -227,6 +228,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, PaceActivity.class));
                 break;
 
+            case R.id.btn_event://配速图
+                startActivity(new Intent(MainActivity.this, EventActivity.class));
+                break;
 
         }
     }
