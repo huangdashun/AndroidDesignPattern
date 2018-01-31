@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="huangshun.it.com.androiddesignpattern.event.EventActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@color/black" />
+    </LinearLayout>
+
+    <huangshun.it.com.androiddesignpattern.event.InterceptLinearlayout
+        android:id="@+id/ll_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@color/red"
+            android:clickable="true" />
+    </huangshun.it.com.androiddesignpattern.event.InterceptLinearlayout>
+
+    <huangshun.it.com.androiddesignpattern.event.RegionView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <huangshun.it.com.androiddesignpattern.event.RegionClickView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <huangshun.it.com.androiddesignpattern.event.RemoteControlMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <huangshun.it.com.androiddesignpattern.event.MultiTouchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <huangshun.it.com.androiddesignpattern.event.SecondTouchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
