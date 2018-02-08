@@ -9,6 +9,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="huangshun.it.com.androiddesignpattern.MainActivity">
+        <Button
+            android:id="@+id/btn_pull"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下拉上拉" />
 
         <Button
             android:id="@+id/btn_suspend"

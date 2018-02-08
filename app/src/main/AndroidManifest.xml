@@ -117,9 +117,14 @@
             android:process=":remote">
             <intent-filter>
                 <action android:name="com.itdashun.aidl" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".view.pull.PullActivity" />
+        <activity android:name=".view.expandble.PinnedActivity" />
+        <activity android:name=".view.myexpandable.MyPinnedActivity"></activity>
     </application>
 
 </manifest>

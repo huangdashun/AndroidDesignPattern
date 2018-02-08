@@ -264,4 +264,16 @@
     <color name="pro_pace_statistic_icon">#0088ff</color>
     <color name="pro_pace_statistic_normal">#00aea4</color>
     <color name="pro_pace_rect_bg">#99cccccc</color>
+
+    <color name="lucensy">#00000001</color>
+    <color name="translucency">#e0000000</color>
+    <color name="orange">#ffa500</color>
+    <!-- <color name="red">#bf242a</color> -->
+    <color name="light_orange">#fcb75c</color>
+    <color name="alpha_00">#00000000</color>
+    <color name="LightGray">#D3D3D3</color>
+    <color name="trans">#50000000</color>
+    <color name="background">#e5e5e5</color>
+    <color name="transparent_background">#50000000</color>
+    <color name="Grey">#BEBEBE</color>
 </resources>
