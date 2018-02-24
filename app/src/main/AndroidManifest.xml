@@ -124,7 +124,11 @@
 
         <activity android:name=".view.pull.PullActivity" />
         <activity android:name=".view.expandble.PinnedActivity" />
-        <activity android:name=".view.myexpandable.MyPinnedActivity"></activity>
+        <activity android:name=".view.myexpandable.MyPinnedActivity" />
+        <activity
+            android:name=".material.MaterialActivity"
+            android:label="@string/title_activity_material"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
