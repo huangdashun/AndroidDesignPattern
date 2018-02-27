@@ -13,7 +13,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/timeline_top_tip" />
+        <include
+            android:id="@+id/timeline_top"
+            layout="@layout/timeline_top_tip" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp_top_preview"
