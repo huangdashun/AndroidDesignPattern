@@ -24,6 +24,7 @@ import huangshun.it.com.androiddesignpattern.file.FileActivity;
 import huangshun.it.com.androiddesignpattern.googlemap.MainMapActivity;
 import huangshun.it.com.androiddesignpattern.greendao.GreenDao3Activity;
 import huangshun.it.com.androiddesignpattern.gson.GsonActivity;
+import huangshun.it.com.androiddesignpattern.material.MaterialActivity;
 import huangshun.it.com.androiddesignpattern.okhttp3.OkHttpActivity;
 import huangshun.it.com.androiddesignpattern.pace.PaceActivity;
 import huangshun.it.com.androiddesignpattern.play.ui.activity.PlayWelcomeActivity;
@@ -34,6 +35,7 @@ import huangshun.it.com.androiddesignpattern.rxjava.demo4.RxPicActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.AidlAccountActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
 import huangshun.it.com.androiddesignpattern.test.phonetype.PhoneTypeActivity;
+import huangshun.it.com.androiddesignpattern.timeline.TimeLineActivity;
 import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
 import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
 import huangshun.it.com.androiddesignpattern.view.SuspendViewActivity;
@@ -156,9 +158,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
             , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
             , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave, R.id.btn_pace,
-            R.id.btn_view_drag_helper, R.id.btn_gson, R.id.btn_suspend, R.id.btn_event, R.id.btn_pull})
+            R.id.btn_view_drag_helper, R.id.btn_gson, R.id.btn_suspend, R.id.btn_event, R.id.btn_pull
+            , R.id.btn_material, R.id.btn_timeLine})
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_timeLine:
+                startActivity(new Intent(MainActivity.this, TimeLineActivity.class));
+                break;
+            case R.id.btn_material:
+                startActivity(new Intent(MainActivity.this, MaterialActivity.class));
+                break;
             case R.id.btn_pull:
                 startActivity(new Intent(MainActivity.this, MyPinnedActivity.class));
                 break;
@@ -252,4 +261,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ExecutorService mCached = Executors.newCachedThreadPool();
     private ExecutorService mSchedule = Executors.newScheduledThreadPool(3);
     private ExecutorService mSingle = Executors.newSingleThreadExecutor();
+
+
 }
