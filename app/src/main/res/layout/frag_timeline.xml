@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="huangshun.it.com.androiddesignpattern.timeline.HomeTimeLineFragment" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/timeline_top_tip" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_top_preview"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
+</layout>

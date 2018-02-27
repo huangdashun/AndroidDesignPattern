@@ -128,7 +128,8 @@
         <activity
             android:name=".material.MaterialActivity"
             android:label="@string/title_activity_material"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".timeline.TimeLineActivity"></activity>
     </application>
 
 </manifest>
