@@ -10,4 +10,14 @@
         </attr>
     </declare-styleable>
 
+
+    <!--会变色view的自定义属性-->
+    <declare-styleable name="ColorTrackTextView">
+        <attr name="origin_color" format="color" />
+        <attr name="change_color" format="color" />
+        <attr name="direction">
+            <enum name="leftToRight" value="0" />
+            <enum name="rightToLeft" value="1" />
+        </attr>
+    </declare-styleable>
 </resources>
