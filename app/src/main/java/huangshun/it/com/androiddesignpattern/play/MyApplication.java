@@ -11,7 +11,7 @@ import huangshun.it.com.androiddesignpattern.play.di.module.HttpModule;
  * Created by hs on 2017/8/14.
  */
 
-public class MyApplication extends MultiDexApplication {
+public class MyApplication extends MultiDexApplication implements Thread.UncaughtExceptionHandler {
     private AppComponent mAppComponent;
 
     public AppComponent getAppComponent() {
@@ -26,5 +26,11 @@ public class MyApplication extends MultiDexApplication {
                 .appModule(new AppModule(this))
                 .httpModule(new HttpModule())
                 .build();
+        Thread.setDefaultUncaughtExceptionHandler(this);
+    }
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+
     }
 }

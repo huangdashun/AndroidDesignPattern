@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewStub;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 
@@ -35,7 +37,6 @@ import huangshun.it.com.androiddesignpattern.rxjava.demo4.RxPicActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.aidl.AidlAccountActivity;
 import huangshun.it.com.androiddesignpattern.test.IPC.messenger.MessengerActivity;
 import huangshun.it.com.androiddesignpattern.test.phonetype.PhoneTypeActivity;
-import huangshun.it.com.androiddesignpattern.timeline.TimeLineActivity;
 import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
 import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
 import huangshun.it.com.androiddesignpattern.view.SuspendViewActivity;
@@ -44,7 +45,7 @@ import huangshun.it.com.androiddesignpattern.viewdraghelper.ViewDragHelperActivi
 import huangshun.it.com.mysdk.MySDKActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String TAG = "MainMapActivity";
+    private static final String TAG = "MainActivity";
     @BindView(R.id.btn_messenger)
     Button mMessenger;
     @BindView(R.id.btn_aidl)
@@ -112,10 +113,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        ViewStub vs = (ViewStub) findViewById(R.id.vs);
+        View inflate = vs.inflate();
+        int inflatedId = vs.getInflatedId();
+        int id = inflate.getId();
+        Log.i(TAG, "inflatedId:" + inflatedId + "====" + "id:" + id);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.i(TAG, "onNewIntent() called with " + "intent = [" + intent + "]");
+    }
+
+    @Override
+    protected void onPause() {
+        Log.i(TAG, "onPause() called with " + "");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(TAG, "onStop() called with " + "");
+        super.onStop();
     }
 
     @Override
     protected void onResume() {
+        Log.d(TAG, "onResume() called with " + "");
         super.onResume();
         CalendarTest();
     }
@@ -163,7 +189,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_timeLine:
-                startActivity(new Intent(MainActivity.this, TimeLineActivity.class));
+//                startActivity(new Intent(MainActivity.this, TimeLineActivity.class));
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
                 break;
             case R.id.btn_material:
                 startActivity(new Intent(MainActivity.this, MaterialActivity.class));

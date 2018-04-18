@@ -40,7 +40,7 @@ public class ReflectTest {
 
         //获取class对象所有的构造函数
         Constructor<?>[] declaredConstructors = peopleClass.getDeclaredConstructors();
-        //获取class对象所有的公共的函数
+        //获取class对象所有的公共的构造函数
         Constructor<?>[] publicConstructors = peopleClass.getConstructors();
         //获取指定声明参数的构造函数
         Constructor<People> declaredConstructor = peopleClass.getDeclaredConstructor(String.class);

@@ -180,5 +180,12 @@
             android:layout_height="wrap_content"
             android:text="蓝牙" />
 
+        <ViewStub
+            android:id="@+id/vs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inflatedId="@+id/my_view"
+            android:layout="@layout/my_vs" />
     </LinearLayout>
+
 </ScrollView>
