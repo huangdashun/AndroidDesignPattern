@@ -41,7 +41,6 @@ import huangshun.it.com.androiddesignpattern.unit13_7.MemotoActivity;
 import huangshun.it.com.androiddesignpattern.unit8_7.ZhuangTaiActivity;
 import huangshun.it.com.androiddesignpattern.view.SuspendViewActivity;
 import huangshun.it.com.androiddesignpattern.view.myexpandable.MyPinnedActivity;
-import huangshun.it.com.androiddesignpattern.viewdraghelper.ViewDragHelperActivity;
 import huangshun.it.com.mysdk.MySDKActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -88,8 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mBtnBrainWave;
     @BindView(R.id.btn_pace)
     Button mBtnPace;
-    @BindView(R.id.btn_view_drag_helper)
-    Button mViewDragHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             , R.id.btn_dagger2, R.id.btn_memoto, R.id.btn_dagger_component, R.id.btn_rx_pic, R.id.btn_rx_search
             , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
             , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave, R.id.btn_pace,
-            R.id.btn_view_drag_helper, R.id.btn_gson, R.id.btn_suspend, R.id.btn_event, R.id.btn_pull
+            R.id.btn_gson, R.id.btn_suspend, R.id.btn_event, R.id.btn_pull
             , R.id.btn_material, R.id.btn_timeLine})
     public void onClick(View v) {
         switch (v.getId()) {
@@ -203,9 +200,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_gson:
                 startActivity(new Intent(MainActivity.this, GsonActivity.class));
-                break;
-            case R.id.btn_view_drag_helper:
-                startActivity(new Intent(MainActivity.this, ViewDragHelperActivity.class));
                 break;
             case R.id.btn_messenger://信使
                 startActivity(new Intent(MainActivity.this, MessengerActivity.class));
