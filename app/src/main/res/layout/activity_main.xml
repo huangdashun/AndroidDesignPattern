@@ -11,6 +11,12 @@
         tools:context="huangshun.it.com.androiddesignpattern.MainActivity">
 
         <Button
+            android:id="@+id/btn_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DialogFragment" />
+
+        <Button
             android:id="@+id/btn_timeLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

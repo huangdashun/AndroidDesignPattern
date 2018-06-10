@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import huangshun.it.com.androiddesignpattern.Dialog.DialogActivity;
 import huangshun.it.com.androiddesignpattern.ble.BleActivity;
 import huangshun.it.com.androiddesignpattern.brainview.BrainWaveActivity;
 import huangshun.it.com.androiddesignpattern.event.EventActivity;
@@ -182,9 +183,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             , R.id.btn_okhttp, R.id.btn_retrofit, R.id.btn_phone_type, R.id.btn_play, R.id.btn_ble, R.id.btn_google_map
             , R.id.btn_green_dao, R.id.btn_file, R.id.btn_brainwave, R.id.btn_pace,
             R.id.btn_gson, R.id.btn_suspend, R.id.btn_event, R.id.btn_pull
-            , R.id.btn_material, R.id.btn_timeLine})
+            , R.id.btn_material, R.id.btn_timeLine,R.id.btn_dialog})
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_dialog:
+                startActivity(new Intent(MainActivity.this, DialogActivity.class));
+                break;
             case R.id.btn_timeLine:
 //                startActivity(new Intent(MainActivity.this, TimeLineActivity.class));
                 startActivity(new Intent(MainActivity.this, MainActivity.class));

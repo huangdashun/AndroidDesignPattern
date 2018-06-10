@@ -133,7 +133,8 @@
             android:name=".material.MaterialActivity"
             android:label="@string/title_activity_material"
             android:theme="@style/AppTheme" />
-        <activity android:name=".timeline.TimeLineActivity"></activity>
+        <activity android:name=".timeline.TimeLineActivity" />
+        <activity android:name=".Dialog.DialogActivity"></activity>
     </application>
 
 </manifest>
