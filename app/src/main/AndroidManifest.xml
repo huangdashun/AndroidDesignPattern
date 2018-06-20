@@ -39,7 +39,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:label">
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -134,7 +134,10 @@
             android:label="@string/title_activity_material"
             android:theme="@style/AppTheme" />
         <activity android:name=".timeline.TimeLineActivity" />
-        <activity android:name=".Dialog.DialogActivity"></activity>
+        <activity android:name=".Dialog.DialogActivity" />
+        <activity android:name=".arouter.ARouterTest1Activity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".arouter.ARouterTest2Activity"></activity>
     </application>
 
 </manifest>

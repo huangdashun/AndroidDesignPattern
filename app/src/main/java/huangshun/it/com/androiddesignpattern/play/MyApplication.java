@@ -2,6 +2,9 @@ package huangshun.it.com.androiddesignpattern.play;
 
 import android.support.multidex.MultiDexApplication;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
+import huangshun.it.com.androiddesignpattern.BuildConfig;
 import huangshun.it.com.androiddesignpattern.play.di.component.AppComponent;
 import huangshun.it.com.androiddesignpattern.play.di.component.DaggerAppComponent;
 import huangshun.it.com.androiddesignpattern.play.di.module.AppModule;
@@ -27,6 +30,12 @@ public class MyApplication extends MultiDexApplication implements Thread.Uncaugh
                 .httpModule(new HttpModule())
                 .build();
         Thread.setDefaultUncaughtExceptionHandler(this);
+        //初始化ARouter
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        ARouter.init(this);
     }
 
     @Override
