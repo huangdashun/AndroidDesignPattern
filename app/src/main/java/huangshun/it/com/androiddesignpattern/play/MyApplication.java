@@ -1,6 +1,7 @@
 package huangshun.it.com.androiddesignpattern.play;
 
 import android.support.multidex.MultiDexApplication;
+import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
@@ -36,6 +37,7 @@ public class MyApplication extends MultiDexApplication implements Thread.Uncaugh
             ARouter.openDebug();
         }
         ARouter.init(this);
+        Log.i("Test", "这句话是用来测试代码的");
     }
 
     @Override
